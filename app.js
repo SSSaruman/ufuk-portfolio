@@ -2,7 +2,7 @@
 'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const toggler=$('.navtoggle'),links=$('.navlinks');
-if(toggler&&links){toggler.addEventListener('click',()=>{const open=links.classList.toggle('open');toggler.textContent=open?'×':'☰';toggler.setAttribute('aria-expanded',String(open))});$$('a',links).forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggler.textContent='☰';toggler.setAttribute('aria-expanded','false')}));}
+if(toggler&&links){toggler.addEventListener('click',()=>{const open=links.classList.toggle('open');toggler.innerHTML=document.body.classList.contains('home-v6')?(open?'CLOSE <span>×</span>':'MENU <span>↗</span>'):(open?'×':'☰');toggler.setAttribute('aria-expanded',String(open))});$$('a',links).forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggler.innerHTML=document.body.classList.contains('home-v6')?'MENU <span>↗</span>':'☰';toggler.setAttribute('aria-expanded','false')}));}
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.06,rootMargin:'0px 0px 25px 0px'});$$('[data-reveal]').forEach(e=>observer.observe(e))}else{$$('[data-reveal]').forEach(e=>e.classList.add('is-visible'))}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 const stages={
@@ -50,6 +50,31 @@ if(app){
  else if(stages[slug])html=basic(stages[slug]);
  else html='<section class="case-hero wrap"><h1>PROJECT NOT FOUND.</h1></section>'+bottom();
  app.innerHTML=html;
+ // Source-based case art direction. These plates use verified original project media;
+ // no generated "proof" or invented final-production renders.
+ if(document.body.classList.contains('case-v6')){
+   const artBySlug={brover:'art/brover-editorial.svg',lanista:'art/lanista-editorial.svg',thronex:'art/thronex-editorial.svg','word-okey':'art/word-okey-editorial.svg'};
+   const art=artBySlug[slug],hero=$('.case-hero-media');
+   if(hero && art){
+     hero.classList.add('case-v6-art');
+     hero.innerHTML='<img src="'+art+'" alt="'+(slug==='lanista'?'Source-geometry-based character study':'Editorial composite built from authentic original project artwork')+'">';
+     // Always keep the real uncomposited source visible in the detailed study.
+     if(slug==='brover'){
+       const next=hero.nextElementSibling;
+       const stage=document.createElement('section');
+       stage.className='case-chapter case-motion-v6';
+       stage.innerHTML='<div class="wrap"><div class="section-top"><span class="eyebrow"><b>ORIGINAL MEDIA /</b> CHARACTER ANIMATION</span><span class="eyebrow">MOVEMENT · SILHOUETTE · PERSONALITY</span></div><div class="case-head"><h2>CHARACTER<br>IN MOTION.</h2><p>A source export reel of actual Brover variants — preserved as real footage, not an AI stand-in. Use the controls to inspect their proportions and timing.</p></div><div class="case-motion-frame"><video src="assets/brover/brover-showreel.mp4" poster="assets/brover/variant-04.webp" playsinline muted loop controls preload="metadata" aria-label="Original Brover animated variant reel"></video></div></div>';
+       if(next)hero.parentNode.insertBefore(stage,next);else hero.after(stage);
+     }
+     else if(slug==='word-okey'||slug==='thronex'){
+       const original=slug==='word-okey'?'assets/word-okey.webp':'assets/thronex.webp';
+       const support=document.createElement('section');support.className='case-chapter case-original-v6';
+       support.innerHTML='<div class="wrap"><div class="section-top"><span class="eyebrow"><b>ORIGINAL SOURCE /</b> ACTUAL GAME ART</span><span class="eyebrow">UNMODIFIED PROJECT MEDIA</span></div><div class="case-head"><h2>THE ACTUAL<br>DESIGN.</h2><p>This is the source artwork underneath the editorial presentation. It is shown without a fabricated device mockup or unrelated imagery.</p></div><div class="case-original-image"><img src="'+original+'" alt="Uncomposited original '+slug+' artwork"></div></div>';
+       hero.after(support);
+     }
+   }
+ }
+
  const v=$('#selectedVideo');if(v){$$('[data-variant]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.variant;if(!/^[0-9]{2}$/.test(id))return;$$('[data-variant]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('#currentVariant').textContent=id;v.poster='assets/brover/variant-'+id+'.webp';v.src='assets/brover/variant-'+id+'.mp4';v.load();const p=v.play();if(p&&p.catch)p.catch(()=>{});}));}
 }
 })();
