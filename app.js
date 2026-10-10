@@ -53,7 +53,7 @@ if(app){
  // Source-based case art direction. These plates use verified original project media;
  // no generated "proof" or invented final-production renders.
  if(document.body.classList.contains('case-v6')){
-   const artBySlug={brover:'art/brover-editorial.svg',lanista:'art/lanista-editorial.svg',thronex:'art/thronex-editorial.svg','word-okey':'art/word-okey-editorial.svg'};
+   const artBySlug={brover:'art/brover-editorial.svg',lanista:'art/lanista-editorial.svg',thronex:'art/thronex-editorial.svg','word-okey':'art/word-okey-editorial.svg',cosmic:'art/cosmic-editorial.svg',iron:'art/iron-editorial.svg',luck:'art/luck-editorial.svg'};
    const art=artBySlug[slug],hero=$('.case-hero-media');
    if(hero && art){
      hero.classList.add('case-v6-art');
