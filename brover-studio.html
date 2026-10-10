@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#241f34;--cream:#f5f1e9;--lav:#c6c4f1;--yellow:#e4fb6a;--line:#c6c0b5;--secondary:#6d6b70;--gut:clamp(20px,4vw,72px);--display:'Space Grotesk',Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:clip;max-width:100%}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%}
 button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}img,video{display:block;max-width:100%}h1,h2,h3,h4,p{margin:0}h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.07em}::selection{background:var(--yellow);color:var(--ink)}:focus-visible{outline:3px solid #9675ea;outline-offset:4px}
 .wrap{max-width:1800px;padding-inline:var(--gut);margin-inline:auto}
 .tag{font-size:11px;font-weight:800;letter-spacing:.13em;line-height:1.45;text-transform:uppercase}
@@ -33,7 +33,7 @@ button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none
 .cover{background:var(--lav)}
 .runway{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;background:#9d99c7;padding:3px}
 .runway figure{min-width:0;margin:0;position:relative;overflow:hidden;background:#cbc6ef}
-.runway figure img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .45s ease}
+.runway figure img{width:100%;aspect-ratio:1;object-fit:contain;transition:transform .45s ease}
 .runway figure:hover img{transform:scale(1.035)}
 .runway figure figcaption{position:absolute;top:15px;left:16px;background:var(--ink);color:white;padding:8px 12px;font-size:10px;font-weight:800;letter-spacing:.11em}
 .cover-note{background:#e6fa75;display:flex;justify-content:space-between;gap:20px;padding:20px var(--gut);align-items:center}
@@ -65,7 +65,7 @@ button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none
 .explore-movie .variant-badge{position:absolute;bottom:22px;left:24px;padding:13px 17px;background:#1d1c2c;color:white;font-size:12px;font-weight:800;letter-spacing:.1em}
 .explore-tools{background:var(--ink);color:white;padding:clamp(25px,4vw,60px);display:flex;flex-direction:column;gap:20px;justify-content:space-between}
 .explore-tools h3{font-size:clamp(45px,5vw,76px);line-height:1.01}
-.explore-tools h3 em{font-style:normal;color:var(--yellow)}
+.explore-tools h3 em{font-style:normal;color:#c8c3ec}
 .explore-tools p{color:#cec8db;line-height:1.75;font-size:15px;max-width:430px}
 .thumbnails{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:15px}
 .thumbnails button{padding:0;border:2px solid transparent;background:#c3c1f2;position:relative}
@@ -84,7 +84,7 @@ button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none
 .tools-section .section-head h2 em{color:#7c9964}
 .tool-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .tool-item{border:1px solid #668061;padding:20px 14px 22px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between}
-.tool-item img{width:44px;height:44px}
+.tool-item img{width:44px;height:44px;object-fit:contain;display:block;filter:brightness(.16)}
 .tool-item strong{font:700 19px var(--display);letter-spacing:-.06em}
 .tool-item small{display:block;font-size:11px;font-weight:700;color:#506948;margin-top:8px;line-height:1.5}
 .tool-disclosure{margin-top:35px;max-width:960px;color:#4a5b41;line-height:1.75;font-size:14px}
