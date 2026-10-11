@@ -291,6 +291,24 @@ body{background:#13141e;color:#eeede8}
  .tool-list{gap:7px}.tool-item{min-height:155px;padding:19px 14px}
 }
 
+
+/* Form and visibility QA refinements */
+.hero-title-frame{clip-path:polygon(52px 0,calc(100% - 52px) 0,100% 52px,100% calc(100% - 52px),calc(100% - 52px) 100%,52px 100%,0 calc(100% - 52px),0 52px)}
+.hero-title-frame::before{opacity:.95}
+.hero-title-frame::after{content:"";position:absolute;z-index:3;right:0;top:0;width:80px;height:80px;background:linear-gradient(135deg,transparent 47%,#d6fc83 48%,#d6fc83 51%,transparent 52%);pointer-events:none;opacity:.9}
+.explore-tools{justify-content:flex-start;gap:18px}
+.explore-tools>div:nth-child(2){margin-top:auto}
+.thumbnails{width:100%;max-width:600px}
+.thumbnails button{min-width:0}
+.thumbnails button img{display:block}
+.tool-item img{opacity:1}
+@media(max-width:600px){
+ .hero-title-frame{clip-path:polygon(24px 0,calc(100% - 24px) 0,100% 24px,100% calc(100% - 24px),calc(100% - 24px) 100%,24px 100%,0 calc(100% - 24px),0 24px)}
+ .hero-title-frame::after{width:39px;height:39px}
+ .explore-tools{min-height:unset}
+ .thumbnails{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
 </style></head>
 <body>
 <header class="top"><div class="inner wrap"><a href="index.html#work" class="brand" aria-label="Portfolio homepage">uk<span>·</span></a><div class="right"><a href="index.html#work">← ALL WORK</a><span class="tag">01 / CHARACTER STUDY</span><button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="menu">MENU ↗</button></div></div></header>
