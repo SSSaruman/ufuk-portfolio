@@ -128,12 +128,18 @@ function render(){
 
  // SHOT 02: A real backwards dolly. The ENTIRE room, screen and monitor
  // transform together as a single camera view: no screen overlay shrink/fade.
- const pull=ease(clamp((p-.35)/.47));
+ // Separate reveals: screen edges -> complete monitor -> desk and room.
+ // Each interval begins at the prior interval's exact scale (no camera jump).
  const vw=window.innerWidth, vh=window.innerHeight;
  const mx=monitor.offsetLeft+monitor.clientLeft+screen.offsetWidth/2;
  const my=monitor.offsetTop+monitor.clientTop+screen.offsetHeight/2;
  const zoom=Math.max(vw/screen.offsetWidth,vh/screen.offsetHeight)*1.065;
- const scale=mix(zoom,1,pull);
+ const edgeScale=Math.min(zoom,Math.max(2.9,zoom*.60));
+ const monitorScale=Math.min(edgeScale,Math.max(1.55,zoom*.28));
+ const scale=p<.54?mix(zoom,edgeScale,ease(clamp((p-.35)/.19)))
+   :p<.73?mix(edgeScale,monitorScale,ease(clamp((p-.54)/.19)))
+   :mix(monitorScale,1,ease(clamp((p-.73)/.21)));
+ const pull=clamp((zoom-scale)/(zoom-1));
  const tx=mix(vw/2-mx*zoom,0,pull);
  const ty=mix(vh/2-my*zoom,0,pull);
  studio.style.transform=`translate3d(${tx.toFixed(3)}px,${ty.toFixed(3)}px,0) scale(${scale.toFixed(5)})`;
@@ -143,13 +149,13 @@ function render(){
  intro.style.opacity=String(1-ease(clamp((p-.15)/.19)));
  intro.style.transform=`translate(-50%,${-25*ease(clamp(p/.31))}px)`;
  cue.style.opacity=String(1-ease(clamp((p-.08)/.17)));
- const end=ease(clamp((p-.86)/.10));
+ const end=ease(clamp((p-.94)/.055));
  copy.style.opacity=String(end);
  copy.style.transform=`translateY(${mix(20,0,end)}px)`;
  const light=p>.58||rect.bottom<window.innerHeight*.7;
  nav.classList.toggle('is-light',light);
  tip.classList.toggle('dark',p>.6);
- tip.textContent=p<.33?'01 / MONİTÖRÜN İÇİNDE':p<.82?'02 / KAMERA GERİ ÇEKİLİYOR':'03 / ODA VE TASARIMCI';
+ tip.textContent=p<.33?'01 / MONİTÖRÜN İÇİNDE':p<.73?'02 / MONİTÖR ORTAYA ÇIKIYOR':'03 / ODA VE TASARIMCI';
  progressEl.style.height=`${Math.round(p*100)}%`;
 }
 function schedule(){if(!raf)raf=requestAnimationFrame(render)}document.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);window.addEventListener('load',schedule);render();
