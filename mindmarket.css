@@ -205,3 +205,6 @@ body.home-v6.mindmarket .v6-hero-art{margin-top:-92px}
 /* Keep the original 'uk·' mark on one line inside its rounded-square holder. */
 body.home-v6.mindmarket .identity .symbol{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;letter-spacing:-.16em;padding-right:4px}
 body.home-v6.mindmarket .identity .symbol i{font-size:18px;align-self:center;letter-spacing:0;margin:0 0 0 2px}
+
+/* Prevent the illustration bleed from expanding the 390px mobile document width. */
+@media(max-width:740px){body.home-v6.mindmarket .v6-hero-art{width:100%;max-width:100%;transform:none}}
