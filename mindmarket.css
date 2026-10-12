@@ -191,3 +191,13 @@ body.home-v6.mindmarket .sys-layers span{font-size:9px;padding:8px 3px;border-ra
 body.home-v6.mindmarket .experience>div{grid-template-columns:.8fr 1fr}
 }
 @media(prefers-reduced-motion:reduce){body.home-v6.mindmarket .ticker-track{animation:none}}
+
+/* Targeted correction: remove the legacy dark bevel background behind the cream hero. */
+body.home-v6.mindmarket .v6-hero-grid{background:var(--mm-paper);max-width:none}
+body.home-v6.mindmarket .v6-intro:before{display:none}
+body.home-v6.mindmarket .v6-intro{position:relative;z-index:2}
+body.home-v6.mindmarket .inline-cta{clip-path:none}
+body.home-v6.mindmarket .navlinks>a{clip-path:none;background:transparent;border-bottom:1px solid var(--mm-sand);margin:0}
+body.home-v6.mindmarket .feature-head span:first-child{clip-path:none;background:transparent;color:var(--mm-gray);padding:0}
+body.home-v6.mindmarket .v6-hero-art{margin-top:-92px}
+@media(max-width:740px){body.home-v6.mindmarket .v6-hero-art{margin-top:0}}
