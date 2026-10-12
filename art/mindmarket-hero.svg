@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 610" role="img" aria-labelledby="title desc">
+<title id="title">An idea becomes a world</title><desc id="desc">Original decorative paper-cut composition with two imaginative makers, a computer, geometric artwork, and brightly colored objects on warm paper.</desc>
+<g stroke="#2c2e2a" stroke-linecap="round" stroke-linejoin="round">
+<!-- large abstract cut paper backdrop -->
+<path d="M65 480Q170 225 415 324Q500 365 581 288Q716 168 855 293Q1017 168 1192 350L1277 559H40Z" fill="#8ed462" stroke="none"/>
+<path d="M112 486Q188 329 341 360Q435 370 506 486Z" fill="#b7eaa0" stroke="none"/>
+<path d="M850 429Q1019 292 1212 432L1267 532H796Z" fill="#a6dcf9" stroke="none"/>
+<circle cx="760" cy="178" r="126" fill="#f5e211" stroke="none"/>
+<circle cx="1035" cy="122" r="34" fill="#ff705d" stroke="none"/>
+<circle cx="1055" cy="224" r="13" fill="#2ba0ff" stroke="none"/>
+<path d="M119 237L164 208L174 248L212 268L172 286L154 326L134 285L95 265Z" fill="#2ba0ff" stroke-width="6"/>
+<path d="M1126 309L1152 273L1176 308L1215 318L1178 336L1163 373L1142 337L1107 324Z" fill="#ff705d" stroke-width="6"/>
+<path d="M985 68l-12 41m-11-26 41 12M255 132l-8 34m-14-20 32 8" fill="none" stroke-width="6"/>
+<!-- editorial board on left -->
+<path d="M95 515L194 181L289 515" fill="none" stroke-width="16"/>
+<rect x="135" y="145" width="217" height="249" rx="18" fill="#ffffff" stroke-width="9" transform="rotate(-10 244 268)"/>
+<g transform="rotate(-10 244 268)">
+<path d="M185 214L262 175L316 232L252 284L183 265Z" fill="#2ba0ff" stroke-width="7"/>
+<path d="M174 324Q211 268 258 325Q294 287 321 310L321 355H170Z" fill="#ff705d" stroke-width="7"/>
+<circle cx="287" cy="199" r="15" fill="#f5e211" stroke-width="5"/>
+</g>
+<!-- person to left, walking forward holding idea -->
+<path d="M398 507L379 576H329L353 478Z" fill="#2c2e2a" stroke-width="8"/>
+<path d="M471 504L513 566H458L428 513Z" fill="#2c2e2a" stroke-width="8"/>
+<path d="M327 577q-15 18-47 20h-5v-18q26-16 55-17zM456 567q3 30 45 30h33v-19l-26-20z" fill="#ff705d" stroke-width="7"/>
+<path d="M341 348Q376 314 423 323Q493 327 506 424L473 516Q411 536 350 502Z" fill="#2ba0ff" stroke-width="9"/>
+<path d="M372 350Q349 379 323 411L286 398" fill="none" stroke="#f5c8a8" stroke-width="31"/>
+<path d="M281 400q-26-4-33 24q8 14 27 15l29-18z" fill="#f5c8a8" stroke-width="7"/>
+<path d="M478 361q29 24 50 46l35-31" fill="none" stroke="#f5c8a8" stroke-width="28"/>
+<path d="M552 387q25 3 30-22l-17-14-24 15z" fill="#f5c8a8" stroke-width="6"/>
+<path d="M376 319L388 285L428 281L430 330" fill="#f5c8a8" stroke-width="7"/>
+<ellipse cx="404" cy="245" rx="56" ry="68" fill="#f5c8a8" stroke-width="8"/>
+<path d="M347 243Q333 172 403 168Q453 170 465 207L444 247Q414 227 393 207Q380 255 352 263Z" fill="#2c2e2a" stroke-width="7"/>
+<circle cx="429" cy="261" r="4" fill="#2c2e2a" stroke="none"/>
+<path d="M419 285q11 13 23-1" fill="none" stroke-width="5"/>
+<path d="M387 340q24 14 44 0" fill="none" stroke="#f5e211" stroke-width="10"/>
+<!-- oversized desk/device in right -->
+<path d="M671 394L1111 379L1093 514L680 535Z" fill="#ffffff" stroke-width="10"/>
+<path d="M703 414L1078 401L1067 488L712 505Z" fill="#d8ebfd" stroke-width="6"/>
+<path d="M698 418L737 490M767 410l40 84" fill="none" stroke="#2ba0ff" stroke-width="7"/>
+<path d="M749 553L1102 553L1143 570L1112 590H732L704 575Z" fill="#2c2e2a" stroke-width="7"/>
+<path d="M1093 459l36 116" stroke-width="16" fill="none"/>
+<path d="M729 497l-37 78" stroke-width="16" fill="none"/>
+<!-- person sitting behind desk -->
+<path d="M816 348Q810 271 875 258Q937 257 963 334L961 431L816 444Z" fill="#ff705d" stroke-width="9"/>
+<path d="M850 290l7-43h51l13 55" fill="#e8af87" stroke-width="8"/>
+<path d="M830 224Q804 152 877 137Q943 122 958 194L947 255Q900 291 846 254Z" fill="#f5c8a8" stroke-width="9"/>
+<path d="M826 198Q812 124 878 119Q965 122 968 183L949 211L929 189L907 171Q870 208 827 207Z" fill="#2c2e2a" stroke-width="7"/>
+<path d="M866 226h4M928 225h4" stroke-width="7"/>
+<path d="M889 249q11 12 24 0" stroke-width="5" fill="none"/>
+<path d="M821 332q-31 19-58 60l49 31" fill="none" stroke="#f5c8a8" stroke-width="30"/>
+<path d="M956 335q24 20 39 58l-36 34" fill="none" stroke="#f5c8a8" stroke-width="30"/>
+<path d="M809 409q22 11 31 25l-23 22q-22-4-34-25Z" fill="#f5c8a8" stroke-width="6"/>
+<path d="M966 415q-19 7-29 22l16 18q25-4 37-19Z" fill="#f5c8a8" stroke-width="6"/>
+<!-- playful mini objects -->
+<rect x="1053" y="285" width="91" height="91" rx="20" fill="#f5e211" stroke-width="8" transform="rotate(12 1099 330)"/>
+<path d="M1081 330q20-34 40 0q-20 35-40 0z" fill="#ffffff" stroke-width="6"/>
+<path d="M579 497q-25-62 9-108q21 35 0 75q50-60 66-16q-19 27-52 28" fill="#8ed462" stroke-width="8"/>
+<rect x="565" y="468" width="74" height="85" rx="13" fill="#ff705d" stroke-width="8"/>
+<circle cx="666" cy="219" r="20" fill="#2ba0ff" stroke-width="6"/>
+<path d="M669 153v28m-14-14h28" stroke-width="7" fill="none"/>
+<!-- baseline -->
+<path d="M66 598H1244" stroke-width="9" fill="none"/>
+</g></svg>
