@@ -2,33 +2,65 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>BARTSS Hero Preview</title>
 <style>
 :root{--ink:#0a2348;--green:#28d65f}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#1f1f1f;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{display:grid;place-items:start center}
-.hero{position:relative;width:min(1097px,100vw);aspect-ratio:1097/704;overflow:hidden;background:#eef4ff;color:var(--ink)}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;z-index:0}
-.nav{position:absolute;top:14px;left:50%;width:min(650px,calc(100% - 36px));transform:translateX(-50%);display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:18px;z-index:20;font-size:7px;font-weight:500}
-.brand{font-size:15px;font-weight:800;letter-spacing:.06em}.nav-links{display:flex;align-items:center;justify-content:center;gap:22px;white-space:nowrap}.nav-actions{display:flex;align-items:center;gap:7px}
-.pill{min-height:28px;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:0 12px;border:1px solid rgba(10,35,72,.45);background:rgba(255,255,255,.28);color:var(--ink);text-decoration:none;font-weight:700;backdrop-filter:blur(3px)}.pill.dark{color:#fff;background:#0a2348;border-color:#0a2348}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
-.copy{position:absolute;top:77px;left:50%;width:min(500px,80%);transform:translateX(-50%);text-align:center;z-index:18}.copy h1{margin:0;font-size:clamp(28px,3.2vw,35px);line-height:1.07;letter-spacing:-.035em;font-weight:850}.copy p{width:min(365px,92%);margin:12px auto 0;font-size:10px;line-height:1.2;font-weight:700}
-.ctas{margin-top:23px;display:flex;justify-content:center;gap:8px}.cta{height:42px;border-radius:999px;padding:0 26px;border:0;background:#fff;color:#1c1c1c;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:750;box-shadow:0 6px 20px rgba(20,52,98,.05)}.social-proof{height:42px;border-radius:999px;padding:0 15px 0 7px;background:#0a2348;color:#fff;display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800}.avatars{display:flex}.avatar{width:24px;height:24px;margin-right:-7px;border-radius:50%;border:1.5px solid #0a2348;display:grid;place-items:center;font-size:8px;font-weight:900}.a1{background:#ff604e}.a2{background:#3f9cff}.a3{width:11px;height:11px;margin:0 0 0 2px;border:0;background:var(--green)}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#fff;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow-x:hidden}
+.hero{position:relative;width:100vw;height:100svh;min-height:680px;overflow:hidden;background:#eef4ff;color:var(--ink)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
+.core{position:absolute;left:50%;top:0;height:100%;aspect-ratio:1636/1043;transform:translateX(-50%);z-index:2;pointer-events:none}
+.nav{position:absolute;top:20px;left:50%;width:min(1180px,calc(100% - 64px));transform:translateX(-50%);display:grid;grid-template-columns:180px 1fr auto;align-items:center;gap:24px;z-index:20;font-size:12px;font-weight:600}
+.brand{font-size:18px;font-weight:900;letter-spacing:.08em}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:28px;white-space:nowrap}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.pill{min-height:34px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;padding:0 15px;border:1px solid rgba(10,35,72,.48);background:rgba(255,255,255,.5);color:var(--ink);text-decoration:none;font-weight:800;backdrop-filter:blur(6px)}
+.pill.dark{color:#fff;background:#0a2348;border-color:#0a2348}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.copy{position:absolute;top:76px;left:50%;width:min(760px,82vw);transform:translateX(-50%);text-align:center;z-index:18}
+.copy h1{margin:0;font-size:clamp(40px,4vw,66px);line-height:1.02;letter-spacing:-.045em;font-weight:900}
+.copy p{width:min(560px,90%);margin:14px auto 0;font-size:clamp(13px,1.1vw,17px);line-height:1.2;font-weight:750}
+.ctas{margin-top:22px;display:flex;justify-content:center;gap:10px}.cta{height:46px;border-radius:999px;padding:0 28px;border:0;background:#fff;color:#1c1c1c;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;box-shadow:0 8px 30px rgba(20,52,98,.08)}.social-proof{height:46px;border-radius:999px;padding:0 16px 0 8px;background:#0a2348;color:#fff;display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:850}.avatars{display:flex}.avatar{width:26px;height:26px;margin-right:-8px;border-radius:50%;border:1.5px solid #0a2348;display:grid;place-items:center;font-size:8px;font-weight:900}.a1{background:#ff604e}.a2{background:#3f9cff}.a3{width:12px;height:12px;margin:7px 0 0 2px;border:0;background:var(--green)}
 .scene-layer{position:absolute;display:block;pointer-events:none;user-select:none;will-change:transform,opacity}
-.characters{left:40.1%;top:43.3%;width:27.35%;height:auto;z-index:4}.char-left,.char-right{position:absolute;inset:0;width:100%;height:auto}.char-left{clip-path:polygon(0 0,59% 0,59% 100%,0 100%);transform-origin:43% 79%;animation:leftCharacter 4.8s ease-in-out infinite}.char-right{clip-path:polygon(47% 0,100% 0,100% 100%,47% 100%);transform-origin:66% 79%;animation:rightCharacter 4.2s ease-in-out infinite}
-.enter{left:41.66%;top:73.86%;width:19.87%;height:auto;z-index:5;transform-origin:50% 88%;animation:keyPress 2.15s cubic-bezier(.22,.72,.2,1) infinite}.hand{left:31.81%;top:52.13%;width:24.25%;height:auto;z-index:7;animation:handPress 2.15s cubic-bezier(.22,.72,.2,1) infinite}.impact{left:39.1%;top:69.2%;width:23.5%;height:auto;z-index:8;opacity:0;transform-origin:50% 50%;animation:impactPop 2.15s ease-out infinite}
-.brand-strip{position:absolute;left:0;right:0;bottom:0;height:70px;z-index:14;background:rgba(255,255,255,.96)}.brand-strip-inner{width:min(695px,calc(100% - 40px));height:100%;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;padding-top:13px;gap:18px}.brand-strip small{display:block;font-size:9px;color:#777;margin-bottom:9px}.brand-list{display:flex;align-items:center;gap:42px;color:#d0d0d0;font-weight:800;font-size:18px;white-space:nowrap}.all-brands{margin-top:3px;font-size:8px;color:#333;text-decoration:none;white-space:nowrap;border-bottom:1px solid #333;padding-bottom:3px}
-@keyframes handPress{0%,16%,100%{transform:translate3d(0,-10px,0)}34%,50%{transform:translate3d(0,0,0)}68%{transform:translate3d(0,-10px,0)}}@keyframes keyPress{0%,22%,100%{transform:translate3d(0,0,0)}36%,49%{transform:translate3d(0,6px,0)}66%{transform:translate3d(0,0,0)}}@keyframes impactPop{0%,31%,100%{opacity:0;transform:scale(.92)}37%{opacity:1;transform:scale(1)}47%{opacity:1;transform:scale(1.025)}58%{opacity:0;transform:scale(1.06)}}@keyframes leftCharacter{0%,100%{transform:rotate(-.25deg) translateY(0)}50%{transform:rotate(.55deg) translateY(1px)}}@keyframes rightCharacter{0%,100%{transform:rotate(.3deg) translateY(0)}50%{transform:rotate(-.7deg) translateY(1px)}}
-@media(max-width:760px){.nav{width:calc(100% - 24px);grid-template-columns:1fr auto}.nav-links{display:none}.copy{top:60px;width:90%}.brand-list{gap:18px;font-size:13px}}
-</style></head>
+.char-mask{position:absolute;left:0;top:0;width:100%;height:69.4%;overflow:hidden;z-index:3}
+.characters{left:32.0%;top:34.6%;width:37.5%;height:auto;transform-origin:50% 90%;animation:charsBob 4.4s ease-in-out infinite}
+.enter{left:39.7%;top:69.2%;width:26.0%;height:auto;z-index:5;transform-origin:50% 88%;animation:keyPress 2.05s cubic-bezier(.22,.72,.2,1) infinite}
+.hand{left:27.5%;top:46.7%;width:40.0%;height:auto;z-index:7;animation:handPress 2.05s cubic-bezier(.22,.72,.2,1) infinite}
+.impact{left:36.7%;top:63.7%;width:28.0%;height:auto;z-index:8;opacity:0;transform-origin:50% 50%;animation:impactPop 2.05s ease-out infinite}
+.brand-strip{position:absolute;left:0;right:0;bottom:0;height:84px;z-index:14;background:rgba(255,255,255,.97);border-top:1px solid rgba(10,35,72,.05)}
+.brand-strip-inner{width:min(1180px,calc(100% - 64px));height:100%;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;padding-top:15px;gap:24px}
+.brand-strip small{display:block;font-size:11px;color:#777;margin-bottom:10px}.brand-list{display:flex;align-items:center;justify-content:space-between;gap:28px;color:#c9c9c9;font-weight:850;font-size:20px;white-space:nowrap}.all-brands{margin-top:4px;font-size:10px;color:#333;text-decoration:none;white-space:nowrap;border-bottom:1px solid #333;padding-bottom:3px}
+@keyframes handPress{0%,17%,100%{transform:translate3d(0,-14px,0)}34%,50%{transform:translate3d(0,0,0)}68%{transform:translate3d(0,-14px,0)}}
+@keyframes keyPress{0%,23%,100%{transform:translate3d(0,0,0)}36%,49%{transform:translate3d(0,8px,0)}66%{transform:translate3d(0,0,0)}}
+@keyframes impactPop{0%,31%,100%{opacity:0;transform:scale(.92)}37%{opacity:1;transform:scale(1)}47%{opacity:1;transform:scale(1.025)}58%{opacity:0;transform:scale(1.06)}}
+@keyframes charsBob{0%,100%{transform:translateY(0) rotate(-.15deg)}50%{transform:translateY(2px) rotate(.25deg)}}
+@media(max-width:900px){.hero{min-height:760px}.nav{width:calc(100% - 28px);grid-template-columns:1fr auto}.nav-links{display:none}.copy{top:74px;width:92vw}.copy h1{font-size:clamp(34px,8vw,52px)}.copy p{font-size:13px}.brand-strip-inner{width:calc(100% - 28px)}.brand-list{gap:18px;font-size:14px;overflow:hidden}}
+@media(prefers-reduced-motion:reduce){.hand,.enter,.impact,.characters{animation:none!important}.impact{opacity:0}}
+</style>
+</head>
 <body>
 <section class="hero">
-<img class="hero-bg" src="https://at.adobe.com/W4r6RqoNhR8d1V8l" alt="">
-<header class="nav"><div class="brand">BARTSS</div><nav class="nav-links"><span>Hizmetler</span><span>Projeler</span><span>Fiyatlar</span><span>Blog</span><span>Kurumsal</span><span>İletişim</span></nav><div class="nav-actions"><a class="pill" href="#">Panel</a><a class="pill dark" href="#"><span class="dot"></span>Toplantı planla</a></div></header>
-<div class="copy"><h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1><p>Sosyal medya, yapay zeka reklam filmi, web ve marka kimliğini araştırmayla başlatan, stratejiyle kuran ve planla yürüten marka laboratuvarı.</p><div class="ctas"><button class="cta">Çalışmaları gör</button><div class="social-proof"><span class="avatars"><span class="avatar a1">UK</span><span class="avatar a2">EAK</span><span class="avatar a3"></span></span><span>15 dk tanış</span></div></div></div>
-<div class="characters scene-layer"><img class="char-left" src="https://at.adobe.com/33BJk2d1SdYrbeho" alt=""><img class="char-right" src="https://at.adobe.com/33BJk2d1SdYrbeho" alt=""></div>
-<img class="scene-layer enter" src="https://at.adobe.com/ORP8Vulkg0BrDsJ8" alt="">
-<img class="scene-layer hand" src="https://at.adobe.com/ClsxB9bxTLOzqKWU" alt="">
-<img class="scene-layer impact" src="https://at.adobe.com/SQLzWRzcKsxBYKAn" alt="">
-<div class="brand-strip"><div class="brand-strip-inner"><div><small>Birlikte çalıştığımız markalar</small><div class="brand-list"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div></div><a class="all-brands" href="#">Tüm markaları gör ↗</a></div></div>
-</section></body></html>
+  <img class="hero-bg" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
+  <header class="nav">
+    <div class="brand">BARTSS</div>
+    <nav class="nav-links"><span>Hizmetler</span><span>Projeler</span><span>Fiyatlar</span><span>Blog</span><span>Kurumsal</span><span>İletişim</span></nav>
+    <div class="nav-actions"><a class="pill" href="#">Panel</a><a class="pill dark" href="#"><span class="dot"></span>Toplantı planla</a></div>
+  </header>
+  <div class="copy">
+    <h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1>
+    <p>Sosyal medya, yapay zeka reklam filmi, web ve marka kimliğini araştırmayla başlatan, stratejiyle kuran ve planla yürüten marka laboratuvarı.</p>
+    <div class="ctas"><button class="cta" type="button">Çalışmaları gör</button><div class="social-proof"><span class="avatars"><span class="avatar a1">UK</span><span class="avatar a2">EAK</span><span class="avatar a3"></span></span><span>15 dk tanış</span></div></div>
+  </div>
+  <div class="core">
+    <div class="char-mask">
+      <img class="scene-layer characters" src="https://at.adobe.com/33BJk2d1SdYrbeho" alt="">
+    </div>
+    <img class="scene-layer enter" src="https://at.adobe.com/ORP8Vulkg0BrDsJ8" alt="">
+    <img class="scene-layer hand" src="https://at.adobe.com/ClsxB9bxTLOzqKWU" alt="">
+    <img class="scene-layer impact" src="https://at.adobe.com/SQLzWRzcKsxBYKAn" alt="">
+  </div>
+  <div class="brand-strip"><div class="brand-strip-inner"><div><small>Birlikte çalıştığımız markalar</small><div class="brand-list"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div></div><a class="all-brands" href="#">Tüm markaları gör ↗</a></div></div>
+</section>
+</body>
+</html>
