@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1700">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#247fc2"/><stop offset=".45" stop-color="#8bd6e8"/><stop offset="1" stop-color="#e7f3d6"/></linearGradient><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#51cfd3"/><stop offset="1" stop-color="#247b99"/></linearGradient></defs>
+<path fill="url(#sky)" d="M0 0H1600V1700H0Z"/>
+<g fill="#fff5df" stroke="#446078" stroke-width="7" stroke-linejoin="bevel"><path d="M-80 170l120-35 40-76 91-17 82 60 71 6 70 77-21 70H-80Z"/><path d="M1212 95l108-33 42-51 67 13 37 58 79-13 105 107v113h-438Z"/><path d="M103 402l63-40 45 9 20-31 66 10 44 74 48 21H103Z"/><path d="M1250 454l61-52 70-10 39-59 66 18 32 55 79 8 45 83h-392Z"/><path d="M470 657l49-34 38 16 21-29 60 20 42 68H470Z"/></g>
+<g fill="#c1d9dc" opacity=".8"><path d="M0 700l163-62 114 32 173-87 91 37 150-43 218 82 158-94 149 58 184-48v180H0Z"/></g>
+<path fill="url(#sea)" d="M0 810Q390 729 791 780T1600 807V1700H0Z"/>
+<g stroke="#1e5772" stroke-width="8" stroke-linejoin="bevel">
+<path fill="#486c69" d="M30 1060l91-90 99 20 91-104 154 56 94-114 106 40 83-94 113 93 79-61 138 108 117-42 97 127 128 46-110 256-332 128-466-48-397 94Z"/>
+<path fill="#79bc74" d="M82 1000l111-67 92 35 80-103 114 41 84-99 128 69 79-96 94 83 74-59 121 101 139-43 100 87-30 70-300 53-330-40-280 29Z"/>
+<path fill="#eed99f" d="M170 1121q256-93 510-34t598-47l96 89-67 141-402 112-427-21-270-96Z"/>
+</g>
+<g stroke="#324353" stroke-width="8" stroke-linejoin="bevel">
+<!-- pop-culture districts: cinematic studio, playful sci-fi, art lab, pixel arcades -->
+<path fill="#303344" d="M116 988l54-209 70-36 42 32 43 213Z"/><path fill="#171b2b" d="M168 762l23-122 37 22 29-22 29 126-59 27Z"/><path fill="#ef5038" d="M179 650l47-25 45 27-47 13Z"/><path fill="#ffcd45" d="M191 671l22-13 13 13-13 13Z"/>
+<path fill="#41556a" d="M410 1061V895l45-41h167l48 43v166Z"/><path fill="#ffb33c" d="M438 904h198l-25 44H460Z"/><path fill="#ffeab9" d="M450 970h68v67h-68ZM545 970h77v67h-77Z"/><path fill="#293e50" d="M477 876v-48h102v48Z"/><path fill="#ffca3d" d="M490 840l42-25 37 25-37 26Z"/>
+<!-- graphic design / maker studio -->
+<path fill="#f38d59" d="M718 1020l21-179 97-89 105 89 20 179Z"/><path fill="#fee4ab" d="M753 834l78-64 81 64Z"/><path fill="#28364d" d="M798 866h74v112h-74Z"/><circle cx="837" cy="916" r="22" fill="#53b3d9"/><path d="M839 900l12 19-24 0Z" fill="#ffb737" stroke="none"/>
+<!-- cinema: camera and iconic film reel abstract -->
+<path fill="#67485d" d="M1034 1076V901l67-38 89 39v174Z"/><path fill="#ffd273" d="M1053 918l50-26 64 27v110h-114Z"/><circle cx="1098" cy="959" r="28" fill="#3d4b66"/><circle cx="1098" cy="959" r="11" fill="#a9dbde"/><path d="M1187 943l71-31v104l-71-31Z" fill="#3d4b66"/>
+<!-- futuristic creativity district -->
+<path fill="#3a556f" d="M1296 974l12-133 36-35 39 35 19 133Z"/><path fill="#8dcee3" d="M1323 850l20-18 18 18-18 22Z"/><path d="M1260 899a100 100 0 0 1 185 0" fill="none" stroke="#e9d5a7" stroke-width="24"/><path fill="#eaa050" d="M1416 1016v-107l35-17 32 23v101Z"/>
+<!-- animated color swatches and editorial boards -->
+<path fill="#e6f3df" d="M346 1202l76-56 95 20-29 95-110 12Z"/><path fill="#ffb740" d="M382 1192l35-22 34 11-28 34Z"/><path fill="#fa684b" d="M468 1236l19-38 41 20-19 39Z"/>
+<path fill="#343d57" d="M805 1184l113-18 58 37-26 113-143 8Z"/><path fill="#f6c543" d="M837 1212l34-21 35 24-14 45-45 1Z"/><path fill="#49b6bb" d="M924 1220l28 19-12 42-37-14Z"/>
+</g>
+<g fill="#264956" stroke="#203b48" stroke-width="6"><path d="M0 1390l120-38 70 19 95-78 111 28 71 82 131-55 159 67 129-50 102 46 177-101 152 91 183-42v341H0Z"/></g>
+<g fill="none" stroke="#c4fff0" stroke-width="9" opacity=".65"><path d="M0 1510q160-50 320 0t320 0 320 0 320 0 320 0"/><path d="M0 1615q160-50 320 0t320 0 320 0 320 0 320 0"/></g>
+<g fill="#d2e6c1" stroke="#264956" stroke-width="5"><path d="M290 1350l27-92 39 0 26 92Z"/><path d="M331 1282l13-52 21 0 13 52Z"/><path d="M1120 1328l29-110 46 0 30 110Z"/></g>
+</svg>
