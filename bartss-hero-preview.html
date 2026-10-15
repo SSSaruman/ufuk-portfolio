@@ -620,6 +620,24 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 .sv-flow i{width:14px;height:2px;background:#ee9146;animation:bartssSignal 2s infinite}
 @media(max-width:750px){.bartss-footer .bf-top{flex-direction:column}.bf-reach{align-items:flex-start}.bf-columns{grid-template-columns:repeat(2,1fr);gap:35px 22px}.bf-ai-links{gap:13px}.bf-bottom{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.bf-star,.sv-brand span,.sv-frames span,.sv-flow i{animation:none!important}}
+
+/* BARTSS concept portfolio — a new additive full-fledged section */
+.bartss-concepts{background:#f4f5f7}
+.bc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}
+.bc-card{display:block;text-decoration:none;color:#15305e;min-width:0}
+.bc-stage{height:285px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border-radius:22px;background:var(--bc-bg);color:var(--bc-ink);overflow:hidden;position:relative;transition:border-radius .4s;isolation:isolate}
+.bc-stage:before{content:"";position:absolute;width:220px;aspect-ratio:1;border-radius:50%;border:1px solid currentColor;opacity:.18;transition:transform .7s}
+.bc-mark{position:relative;font-size:110px;line-height:1;display:block;transition:transform .7s cubic-bezier(.16,.7,.2,1)}
+.bc-stage strong{position:relative;font-size:clamp(24px,2.2vw,39px);font-weight:900;letter-spacing:-.08em}
+.bc-card:hover .bc-mark{transform:rotate(22deg) scale(1.15)}
+.bc-card:hover .bc-stage:before{transform:scale(1.35)}
+.bc-card:hover .bc-stage{border-radius:36px}
+.bc-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 3px;font-size:14px;font-weight:750}
+.bc-meta small{font-size:9px;font-weight:700;opacity:.58}
+.bc-meta b{font-size:20px}
+.bc-note{font-size:12px;color:#617289;margin:23px 0 0}
+@media(max-width:950px){.bc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.bc-grid{grid-template-columns:1fr}.bc-stage{height:300px}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -636,7 +654,7 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
   <header class="nav">
     <div class="brand">BARTSS</div>
     <nav class="nav-links">
-      <div class="nav-service"><a href="#hizmetler" aria-haspopup="true">Hizmetler <span aria-hidden="true">⌄</span></a><div class="nav-service-menu"><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik <span>↗</span></a><a href="hizmetler/web-ui-ux.html">Web & UI/UX <span>↗</span></a><a href="hizmetler/3d-motion.html">3D & Motion <span>↗</span></a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon <span>↗</span></a></div></div><a href="#projeler">İşlerimiz</a><a href="#yapay-zeka">AI Sistemler</a>
+      <div class="nav-service"><a href="#hizmetler" aria-haspopup="true">Hizmetler <span aria-hidden="true">⌄</span></a><div class="nav-service-menu"><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik <span>↗</span></a><a href="hizmetler/web-ui-ux.html">Web & UI/UX <span>↗</span></a><a href="hizmetler/3d-motion.html">3D & Motion <span>↗</span></a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon <span>↗</span></a><a href="hizmetler/sosyal-medya.html">Sosyal Medya <span>↗</span></a></div></div><a href="#projeler">İşlerimiz</a><a href="#yapay-zeka">AI Sistemler</a>
       <a href="#surec">Süreç</a><a href="#hakkimda">Hakkımızda</a><a href="#iletisim">İletişim</a>
     </nav>
     <div class="nav-actions">
@@ -720,14 +738,14 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
     <a href="#iletisim" class="works-more">Bir proje konuşalım <span>↗</span></a>
   </div>
 </section>
-<section class="section intro" id="yapay-zeka">
+<section class="section bartss-concepts" id="konseptler"><div class="contain"><div class="section-head"><div><span class="eyebrow">03 / BARTSS STÜDYO KONSEPTLERİ</span><h2 class="display">Yalnızca anlatmıyoruz.<br>Nasıl tasarladığımızı gösteriyoruz.</h2><p class="lead">Beş farklı ihtiyaca, beş yaratıcı çözüm. Tamamı BARTSS'ın yetkinliklerini göstermek için hazırlanan bağımsız, kurgusal marka çalışmalarıdır.</p></div><a class="inline-link" href="#iletisim">Sizin projenizi konuşalım ↗</a></div><div class="bc-grid"><a class="bc-card" href="konsept/morrow.html" style="--bc-bg:#f3e1bd;--bc-ink:#1b352c"><div class="bc-stage"><span class="bc-mark">☀</span><strong>MORROW</strong></div><div class="bc-meta"><span>Marka Kimliği <small>· BAĞIMSIZ KONSEPT</small></span><b>↗</b></div></a><a class="bc-card" href="konsept/kinetic.html" style="--bc-bg:#152b58;--bc-ink:#9ad6c4"><div class="bc-stage"><span class="bc-mark">▦</span><strong>KINETIC</strong></div><div class="bc-meta"><span>Web & UI/UX <small>· BAĞIMSIZ KONSEPT</small></span><b>↗</b></div></a><a class="bc-card" href="konsept/orbit.html" style="--bc-bg:#17233a;--bc-ink:#b9d5f7"><div class="bc-stage"><span class="bc-mark">◉</span><strong>ORBIT / 01</strong></div><div class="bc-meta"><span>3D & Motion <small>· BAĞIMSIZ KONSEPT</small></span><b>↗</b></div></a><a class="bc-card" href="konsept/nexa.html" style="--bc-bg:#dad5ff;--bc-ink:#16335d"><div class="bc-stage"><span class="bc-mark">✳</span><strong>NEXA FLOW</strong></div><div class="bc-meta"><span>AI & Otomasyon <small>· BAĞIMSIZ KONSEPT</small></span><b>↗</b></div></a><a class="bc-card" href="konsept/soli.html" style="--bc-bg:#f6d99d;--bc-ink:#437b4d"><div class="bc-stage"><span class="bc-mark">✺</span><strong>SOLI</strong></div><div class="bc-meta"><span>Sosyal Medya <small>· BAĞIMSIZ KONSEPT</small></span><b>↗</b></div></a></div><p class="bc-note">Buradaki markalar ve brief'ler kurgusaldır; gerçek müşteri veya ölçülmüş başarı iddiası taşımaz.</p></div></section><section class="section intro" id="yapay-zeka">
   <div class="contain intro-layout">
-    <div class="reveal"><span class="eyebrow" style="color:#98baff">03 / AI & Yaratıcı sistemler</span><h2 class="display">Sadece tasarlamıyoruz.<br>Üretim sistemleri kuruyoruz.</h2><p class="lead">Brief’ten tasarıma, içerik üretiminden onay ve yayın akışına kadar insan yaratıcılığı ile otomasyonu birlikte çalıştıran süreçler tasarlıyoruz.</p><a class="inline-link" href="#surec" style="color:white">Nasıl çalışıyoruz? ↗</a></div>
+    <div class="reveal"><span class="eyebrow" style="color:#98baff">04 / AI & Yaratıcı sistemler</span><h2 class="display">Sadece tasarlamıyoruz.<br>Üretim sistemleri kuruyoruz.</h2><p class="lead">Brief’ten tasarıma, içerik üretiminden onay ve yayın akışına kadar insan yaratıcılığı ile otomasyonu birlikte çalıştıran süreçler tasarlıyoruz.</p><a class="inline-link" href="#surec" style="color:white">Nasıl çalışıyoruz? ↗</a></div>
     <div class="intro-panel reveal"><span class="mini">Yaratıcı üretim akışı / Etkileşimli demo</span><button class="flow-demo-btn" type="button" aria-label="İş akışı demosunu çalıştır">Akışı başlat <span>↗</span></button><div class="flow-row"><div class="flow-node">Brief</div><span class="flow-link">→</span><div class="flow-node">Strateji</div><span class="flow-link">→</span><div class="flow-node">Üretim</div></div><div class="flow-row" style="margin-top:16px"><div class="flow-node">Kontrol</div><span class="flow-link">→</span><div class="flow-node">Onay</div><span class="flow-link">→</span><div class="flow-node">Teslim</div></div><div class="flow-result"><span class="flow-demo-state">Bir akış başlatın</span><span class="flow-demo-final">Daha kontrollü, daha tutarlı üretim</span><small>Otomasyon, insan onayının yerini değil; gereksiz tekrarları alır.</small></div></div>
   </div>
 </section>
 <section class="section" id="surec">
-  <div class="contain"><div class="section-head reveal"><div><span class="eyebrow">04 / Nasıl çalışıyoruz?</span><h2 class="display">Önce anlarız.<br>Sonra tasarlar, test ederiz.</h2></div></div>
+  <div class="contain"><div class="section-head reveal"><div><span class="eyebrow">05 / Nasıl çalışıyoruz?</span><h2 class="display">Önce anlarız.<br>Sonra tasarlar, test ederiz.</h2></div></div>
     <div class="process-list">
       <div class="process-step reveal"><strong>01 / KEŞİF</strong><h3>Dinleriz</h3><p>Problemi, hedefi ve gerçek ihtiyacı netleştiririz.</p></div>
       <div class="process-step reveal"><strong>02 / ARAŞTIRMA</strong><h3>İnceleriz</h3><p>Kullanıcıyı, rakipleri ve iyi örnekleri araştırırız.</p></div>
@@ -740,7 +758,7 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 <section class="section" id="hakkimda" style="background:#f1f3f5">
   <div class="contain about-layout">
     <div class="about-card reveal"><span class="monogram">B.</span><p>Tasarım, teknoloji ve deney yapmayı bir araya getiren yaratıcı stüdyo.</p></div>
-    <div class="about-copy reveal"><span class="eyebrow">05 / BARTSS hakkında</span><h2 class="display">Tek bir disipline<br>sığmıyoruz.</h2><p>BARTSS’ta grafik tasarım, web, kullanıcı arayüzleri, marka kimliği, oyun ve 3D üretim deneyimlerimizi bir araya getiriyoruz. Bir disiplinde öğrendiklerimizi diğerine taşıyor, her projeye farklı bakış açılarıyla yaklaşıyoruz.</p><p>Bugün yapay zekâ destekli iş akışları, otomasyon ve yeni dijital ürün fikirleri üzerine de çalışıyoruz.</p></div>
+    <div class="about-copy reveal"><span class="eyebrow">06 / BARTSS hakkında</span><h2 class="display">Tek bir disipline<br>sığmıyoruz.</h2><p>BARTSS’ta grafik tasarım, web, kullanıcı arayüzleri, marka kimliği, oyun ve 3D üretim deneyimlerimizi bir araya getiriyoruz. Bir disiplinde öğrendiklerimizi diğerine taşıyor, her projeye farklı bakış açılarıyla yaklaşıyoruz.</p><p>Bugün yapay zekâ destekli iş akışları, otomasyon ve yeni dijital ürün fikirleri üzerine de çalışıyoruz.</p></div>
   </div>
 </section>
 <section class="section contact" id="iletisim">
@@ -751,8 +769,8 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 <div class="contain">
  <div class="bf-top"><div><a class="footer-logo" href="bartss-hero-preview.html">BARTSS<span class="bf-star">✳</span></a><p>Bir fikri tasarıma, tasarımı çalışan bir deneyime dönüştürüyoruz.</p></div><div class="bf-reach"><a class="bf-project" href="#iletisim">Bir proje konuşalım <span>↗</span></a><a class="bf-mail" href="#iletisim">İletişim için yazın ↗</a></div></div>
  <div class="bf-columns">
-  <div><span class="bf-label">Hizmetler</span><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik</a><a href="hizmetler/web-ui-ux.html">Web & UI/UX</a><a href="hizmetler/3d-motion.html">3D & Motion</a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon</a></div>
-  <div><span class="bf-label">Çalışmalar</span><a href="#projeler">Seçili işler</a><a href="projeler/brover-studio.html">Brover Studio</a><a href="#projeler">Oyun arayüzleri</a><a href="#yapay-zeka">Yaratıcı sistemler</a></div>
+  <div><span class="bf-label">Hizmetler</span><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik</a><a href="hizmetler/web-ui-ux.html">Web & UI/UX</a><a href="hizmetler/3d-motion.html">3D & Motion</a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon</a><a href="hizmetler/sosyal-medya.html">Sosyal Medya Tasarımı</a></div>
+  <div><span class="bf-label">Çalışmalar</span><a href="#projeler">Seçili işler</a><a href="#konseptler">Stüdyo konseptleri</a><a href="projeler/brover-studio.html">Brover Studio</a><a href="#projeler">Oyun arayüzleri</a><a href="#yapay-zeka">Yaratıcı sistemler</a></div>
   <div><span class="bf-label">Stüdyo</span><a href="#hakkimda">Hakkımızda</a><a href="#surec">Çalışma sürecimiz</a><a href="#iletisim">İletişim</a><a href="#hizmetler">Tüm hizmetler</a></div>
   <div><span class="bf-label">Keşfet</span><a href="#yapay-zeka">AI & Otomasyon</a><a href="#projeler">Neler ürettik?</a><a href="#hizmetler">Nasıl yardımcı oluruz?</a><a href="#iletisim">Birlikte çalışalım ↗</a></div>
  </div>
