@@ -644,7 +644,7 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 <link rel="preload" as="image" href="./assets/hero-characters.png">
 <link rel="preload" as="image" href="./assets/hero-hand.png">
 <link rel="preload" as="image" href="./assets/hero-enter.png">
-</head>
+<link rel="stylesheet" href="assets/bartss-language.css"></head>
 <body>
 <div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="BARTSS sitesi yükleniyor">
  <div class="loader-inner"><div class="loader-logo">BARTSS</div><div class="loader-key" aria-hidden="true"></div><div class="loader-caption">SAHNE HAZIRLANIYOR</div><div class="loader-progress" aria-hidden="true"></div></div>
@@ -919,5 +919,5 @@ const copy=()=>navigator.clipboard?.writeText(question).catch(()=>{});
 document.querySelector('.bf-copy')?.addEventListener('click',function(){copy();this.textContent='Soru kopyalandı ✓';});
 document.querySelectorAll('.bf-ai[data-ai]').forEach(b=>b.addEventListener('click',()=>{copy();window.open(b.dataset.ai,'_blank','noopener,noreferrer')}));
 })();
-</script></body>
+</script><script defer src="assets/bartss-language.js"></script></body>
 </html>
