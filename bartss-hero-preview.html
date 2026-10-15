@@ -439,6 +439,22 @@ html.is-loading,html.is-loading body{overflow:hidden}
 
 /* Enter final alignment: ~12% larger, centered in existing key recess */
 .enter{width:24.5%;left:39.05%;top:71.9%}
+
+/* Partner strip: single heading baseline + full viewport marquee */
+.brand-strip{height:144px;min-height:144px;display:flex;flex-direction:column;overflow:hidden}
+.brand-strip-inner{width:min(1180px,calc(100% - 64px));height:auto;padding:22px 0 0;display:block;flex:none}
+.brand-strip-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:24px}
+.brand-strip-heading small{font-size:13px;margin:0;line-height:20px}
+.brand-strip-heading .all-brands{margin:0;padding:0 0 2px;font-size:13px;line-height:20px}
+.brand-strip>.brand-marquee{width:100vw;max-width:none;flex:1;display:flex;align-items:center;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0%,#000 2.5%,#000 97.5%,transparent 100%)}
+.brand-strip>.brand-marquee .brand-track{display:flex;align-items:center;width:max-content;animation:brandsSlide 24s linear infinite}
+.brand-strip>.brand-marquee .brand-list{display:flex;flex:0 0 auto;justify-content:flex-start;align-items:center;gap:clamp(48px,5vw,95px);padding-right:clamp(48px,5vw,95px);white-space:nowrap;font-size:clamp(21px,1.55vw,29px)}
+@media(max-width:760px){
+ .brand-strip{height:124px;min-height:124px}
+ .brand-strip-inner{width:calc(100% - 28px);padding-top:15px}
+ .brand-strip-heading small,.brand-strip-heading .all-brands{font-size:11px}
+ .brand-strip>.brand-marquee .brand-list{font-size:21px;gap:40px;padding-right:40px}
+}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -493,14 +509,16 @@ html.is-loading,html.is-loading body{overflow:hidden}
 
 </section>
 <div class="brand-strip">
-    <div class="brand-strip-inner">
-      <div>
-        <small>Birlikte çalıştığımız markalar</small>
-        <div class="brand-marquee" aria-label="Birlikte çalıştığımız markalar"><div class="brand-track"><div class="brand-list"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div><div class="brand-list" aria-hidden="true"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div></div></div>
-      </div>
+  <div class="brand-strip-inner">
+    <div class="brand-strip-heading">
+      <small>Birlikte çalıştığımız markalar</small>
       <a class="all-brands" href="#projeler">Çalışmaları keşfet ↗</a>
     </div>
   </div>
+  <div class="brand-marquee" aria-label="Birlikte çalıştığımız markalar">
+    <div class="brand-track"><div class="brand-list"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div><div class="brand-list" aria-hidden="true"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div></div>
+  </div>
+</div>
 
 <main class="site-main">
 <section class="section" id="hizmetler">
