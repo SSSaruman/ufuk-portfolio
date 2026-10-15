@@ -455,6 +455,23 @@ html.is-loading,html.is-loading body{overflow:hidden}
  .brand-strip-heading small,.brand-strip-heading .all-brands{font-size:11px}
  .brand-strip>.brand-marquee .brand-list{font-size:21px;gap:40px;padding-right:40px}
 }
+
+/* Editorial masonry: one feature + four supporting real portfolio projects */
+.editorial-work-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,minmax(285px,1fr));gap:18px}
+.editorial-work-grid .case{position:relative;min-height:0;border:6px solid #fff;border-radius:23px;overflow:hidden;isolation:isolate;box-shadow:0 8px 24px rgba(12,33,66,.07);background:#10254c}
+.editorial-work-grid .case.featured{grid-column:1;grid-row:1/span 2}
+.editorial-work-grid .case-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;z-index:0}
+.editorial-work-grid .case:hover .case-image{transform:scale(1.06)}
+.editorial-work-grid .case:after{content:"";position:absolute;inset:42% 0 0;background:linear-gradient(transparent,rgba(5,19,42,.84));z-index:1;pointer-events:none}
+.editorial-work-grid .case-info{position:absolute;bottom:0;left:0;right:0;padding:26px 22px 22px;z-index:2;background:none!important}
+.editorial-work-grid .case-info h3{color:#fff;font-weight:700;font-size:clamp(22px,1.7vw,31px);margin:0 0 5px}
+.editorial-work-grid .case-info small{color:#b9dbff;font-size:13px}
+.editorial-work-grid .case-category{position:absolute;top:16px;left:15px;z-index:3;background:#fff;color:#17355b;font-size:11px;font-weight:700;padding:9px 12px;border-radius:999px}
+.editorial-work-grid .arrow{z-index:3;top:14px;right:14px;font-size:20px}
+.works-more{display:inline-flex;align-items:center;gap:14px;border:1px solid #c5cbd4;color:#0c2243;border-radius:99px;padding:13px 20px;text-decoration:none;font-size:14px;font-weight:650;margin-top:24px;transition:background .2s}
+.works-more:hover{background:#fff}
+@media(max-width:950px){.editorial-work-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.editorial-work-grid .case{min-height:295px}.editorial-work-grid .case.featured{grid-column:1/-1;grid-row:auto;min-height:460px}}
+@media(max-width:650px){.editorial-work-grid{grid-template-columns:1fr;gap:14px}.editorial-work-grid .case,.editorial-work-grid .case.featured{grid-column:auto;grid-row:auto;min-height:300px}.editorial-work-grid .case.featured{min-height:400px}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -545,11 +562,14 @@ html.is-loading,html.is-loading body{overflow:hidden}
 <section class="section case-section" id="projeler">
   <div class="contain">
     <div class="section-head reveal"><div><span class="eyebrow">02 / Seçili çalışmalar</span><h2 class="display">Farklı alanlar.<br>Tek bir üretim yaklaşımı.</h2><p class="lead">Görsel tasarım, oyun arayüzleri ve dijital ürünler üzerinden seçili çalışmalar.</p></div><a class="inline-link" href="#iletisim">Yeni bir proje konuşalım ↗</a></div>
-    <div class="case-grid">
-      <a class="case featured reveal" href="brover-studio.html"><img class="case-image" loading="lazy" src="art/brover-hero.svg" alt="Brover Studio projesi görseli"><span class="arrow">↗</span><div class="case-info"><small>Dijital tasarım / Kreatif yön</small><h3>Brover Studio</h3></div></a>
-      <a class="case reveal" href="#iletisim"><img class="case-image" loading="lazy" src="art/thronex-editorial.svg" alt="Thronex oyun arayüzü görseli"><span class="arrow">↗</span><div class="case-info"><small>Oyun / UI / Art direction</small><h3>Thronex</h3></div></a>
-      <a class="case reveal" href="#iletisim"><img class="case-image" loading="lazy" src="art/word-okey-editorial.svg" alt="Word Okey oyun tasarımı görseli"><span class="arrow">↗</span><div class="case-info"><small>Oyun / Dijital deneyim</small><h3>Word Okey</h3></div></a>
+    <div class="case-grid editorial-work-grid">
+<a class="case featured reveal" href="brover-studio.html" aria-label="Brover Studio çalışmasını görüntüle"><img class="case-image" src="art/brover-hero.svg" alt="Brover Studio projesinden görsel" loading="lazy" decoding="async"><span class="case-category">Web / Kreatif Tasarım</span><span class="arrow">↗</span><div class="case-info"><h3>Brover Studio</h3><small>Web / Kreatif Tasarım</small></div></a>
+<a class="case  reveal" href="#iletisim" aria-label="Thronex çalışmasını görüntüle"><img class="case-image" src="assets/thronex.webp" alt="Thronex projesinden görsel" loading="lazy" decoding="async"><span class="case-category">Oyun / UI Tasarımı</span><span class="arrow">↗</span><div class="case-info"><h3>Thronex</h3><small>Oyun / UI Tasarımı</small></div></a>
+<a class="case  reveal" href="#iletisim" aria-label="Word Okey çalışmasını görüntüle"><img class="case-image" src="assets/word-okey.webp" alt="Word Okey projesinden görsel" loading="lazy" decoding="async"><span class="case-category">Oyun / Arayüz</span><span class="arrow">↗</span><div class="case-info"><h3>Word Okey</h3><small>Oyun / Arayüz</small></div></a>
+<a class="case  reveal" href="#iletisim" aria-label="Cosmic çalışmasını görüntüle"><img class="case-image" src="assets/cosmic.webp" alt="Cosmic projesinden görsel" loading="lazy" decoding="async"><span class="case-category">Oyun / Görsel Tasarım</span><span class="arrow">↗</span><div class="case-info"><h3>Cosmic</h3><small>Oyun / Görsel Tasarım</small></div></a>
+<a class="case  reveal" href="#iletisim" aria-label="Lanista çalışmasını görüntüle"><img class="case-image" src="art/lanista-editorial.svg" alt="Lanista projesinden görsel" loading="lazy" decoding="async"><span class="case-category">Oyun / Art Direction</span><span class="arrow">↗</span><div class="case-info"><h3>Lanista</h3><small>Oyun / Art Direction</small></div></a>
     </div>
+    <a href="#iletisim" class="works-more">Bir proje konuşalım <span>↗</span></a>
   </div>
 </section>
 <section class="section intro" id="yapay-zeka">
