@@ -475,6 +475,18 @@ html.is-loading,html.is-loading body{overflow:hidden}
 
 /* Consistent section anchors beneath persistent navigation */
 #hizmetler,#projeler,#yapay-zeka,#surec,#hakkimda,#iletisim{scroll-margin-top:98px}
+
+/* Multi-page service navigation, keeping existing hero/header structure */
+.nav-service{position:relative;display:flex;align-items:center}
+.nav-service>a{display:inline-flex;align-items:center;gap:5px}
+.nav-service-menu{position:absolute;top:calc(100% + 17px);left:-19px;width:305px;padding:12px;background:#fff;box-shadow:0 18px 55px #0d30612b;border:1px solid #e4eaf3;border-radius:16px;display:grid;gap:4px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:999}
+.nav-service-menu a{display:flex;justify-content:space-between;gap:14px;color:#11325f;padding:14px 13px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:600}
+.nav-service-menu a:hover{background:#eaf2ff;opacity:1}
+.nav-service:hover .nav-service-menu,.nav-service:focus-within .nav-service-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-service-menu:before{content:"";position:absolute;left:0;right:0;height:24px;top:-20px}
+a.svc{display:block;text-decoration:none;color:inherit}
+a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
+@media(max-width:760px){.nav-service-menu{position:fixed;top:65px;left:12px;width:min(330px,calc(100vw - 24px))}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -491,7 +503,7 @@ html.is-loading,html.is-loading body{overflow:hidden}
   <header class="nav">
     <div class="brand">BARTSS</div>
     <nav class="nav-links">
-      <a href="#hizmetler">Hizmetler</a><a href="#projeler">İşlerimiz</a><a href="#yapay-zeka">AI Sistemler</a>
+      <div class="nav-service"><a href="#hizmetler" aria-haspopup="true">Hizmetler <span aria-hidden="true">⌄</span></a><div class="nav-service-menu"><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik <span>↗</span></a><a href="hizmetler/web-ui-ux.html">Web & UI/UX <span>↗</span></a><a href="hizmetler/3d-motion.html">3D & Motion <span>↗</span></a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon <span>↗</span></a></div></div><a href="#projeler">İşlerimiz</a><a href="#yapay-zeka">AI Sistemler</a>
       <a href="#surec">Süreç</a><a href="#hakkimda">Hakkımızda</a><a href="#iletisim">İletişim</a>
     </nav>
     <div class="nav-actions">
@@ -555,10 +567,10 @@ html.is-loading,html.is-loading body{overflow:hidden}
   </div>
 </div>
     <div class="service-grid">
-      <article class="svc reveal"><div class="svc-art"><span class="num">01 / BRAND</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">02 / DIGITAL</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">03 / MOTION</span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">04 / SYSTEM</span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></article>
+      <a class="svc reveal" href="hizmetler/marka-kimligi.html" aria-label="Marka & Görsel Kimlik hizmetini incele"><div class="svc-art"><span class="num">01 / BRAND</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></a>
+      <a class="svc reveal" href="hizmetler/web-ui-ux.html" aria-label="Web & UI/UX hizmetini incele"><div class="svc-art"><span class="num">02 / DIGITAL</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></a>
+      <a class="svc reveal" href="hizmetler/3d-motion.html" aria-label="3D & Motion hizmetini incele"><div class="svc-art"><span class="num">03 / MOTION</span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></a>
+      <a class="svc reveal" href="hizmetler/ai-otomasyon.html" aria-label="AI & Otomasyon hizmetini incele"><div class="svc-art"><span class="num">04 / SYSTEM</span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></a>
     </div>
   </div>
 </section>
