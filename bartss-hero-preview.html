@@ -487,6 +487,63 @@ html.is-loading,html.is-loading body{overflow:hidden}
 a.svc{display:block;text-decoration:none;color:inherit}
 a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 @media(max-width:760px){.nav-service-menu{position:fixed;top:65px;left:12px;width:min(330px,calc(100vw - 24px))}}
+
+/* BARTSS MOTION LAB / additive and reversible — preserves layout */
+.svc{overflow:hidden}
+.svc-art{perspective:650px}
+.svc-art .svc-illustration{transform-origin:50% 65%;transition:transform .7s cubic-bezier(.2,.85,.2,1),filter .5s}
+.svc:is(:hover,:focus-visible) .svc-illustration{filter:drop-shadow(0 16px 15px rgba(8,35,78,.12))}
+.svc:nth-child(1):is(:hover,:focus-visible) .svc-illustration{animation:bartssStamp .85s cubic-bezier(.34,0,.22,1) both}
+.svc:nth-child(2):is(:hover,:focus-visible) .svc-illustration{animation:bartssInterface .95s ease both}
+.svc:nth-child(3):is(:hover,:focus-visible) .svc-illustration{animation:bartssTilt 2.7s ease-in-out infinite}
+.svc:nth-child(4):is(:hover,:focus-visible) .svc-illustration{animation:bartssBot 2.6s ease-in-out infinite}
+.svc-spark,.svc-cursor,.svc-orbit,.svc-status{position:absolute;pointer-events:none;z-index:4;opacity:0}
+.svc-spark{top:30%;left:68%;font-size:38px;color:#f39132;transform:scale(.2)}
+.svc:nth-child(1):is(:hover,:focus-visible) .svc-spark{animation:bartssSpark .9s ease-out both}
+.svc-cursor{bottom:19%;right:19%;color:#0c2a57;font-size:36px;text-shadow:2px 2px #fff;transform:translate(21px,22px)}
+.svc:nth-child(2):is(:hover,:focus-visible) .svc-cursor{animation:bartssCursor 1.3s cubic-bezier(.2,.7,.2,1) both}
+.svc-orbit{width:55%;aspect-ratio:1;border:1.5px dashed #4e7dc77a;border-radius:50%;left:22%;top:15%}
+.svc-orbit span{position:absolute;left:48%;top:-6px;width:12px;height:12px;border:2px solid white;background:#fa942d;border-radius:50%}
+.svc:nth-child(3):is(:hover,:focus-visible) .svc-orbit{opacity:1;animation:bartssOrbit 6s linear infinite}
+.svc-status{right:17px;bottom:13px;display:flex;gap:6px}
+.svc-status i{display:block;width:7px;height:7px;background:#f58f31;border-radius:50%;opacity:.35}
+.svc:nth-child(4):is(:hover,:focus-visible) .svc-status{opacity:1}
+.svc:nth-child(4):is(:hover,:focus-visible) .svc-status i{animation:bartssSignal 1.6s ease-in-out infinite}
+.svc-status i:nth-child(2){animation-delay:.22s!important}.svc-status i:nth-child(3){animation-delay:.44s!important}
+@keyframes bartssStamp{0%{transform:translateY(-13px) rotate(-3deg)}43%{transform:translateY(6px) scale(.98)}68%{transform:translateY(-5px) rotate(1deg)}100%{transform:translateY(0)}}
+@keyframes bartssSpark{0%,27%{opacity:0;transform:scale(.2) rotate(-30deg)}44%{opacity:1;transform:scale(1.2) rotate(12deg)}100%{opacity:0;transform:scale(1.6) rotate(26deg)}}
+@keyframes bartssInterface{0%{transform:translateY(8px) rotateY(-8deg)}65%{transform:translateY(-4px) rotateY(4deg)}100%{transform:translateY(0)}}
+@keyframes bartssCursor{0%{opacity:0;transform:translate(24px,25px)}25%{opacity:1}53%{transform:translate(0,0) scale(1)}66%{transform:scale(.82)}80%{transform:scale(1)}100%{opacity:1;transform:translate(0,0)}}
+@keyframes bartssTilt{0%,100%{transform:rotate(-3deg) translateY(1px)}50%{transform:rotate(4deg) translateY(-5px)}}
+@keyframes bartssOrbit{to{transform:rotate(360deg)}}
+@keyframes bartssBot{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes bartssSignal{0%,100%{opacity:.25;transform:scale(.7)}45%{opacity:1;transform:scale(1.25)}}
+/* Projects: slightly staggered reveal, focus and hover */
+.editorial-work-grid .case{transition:box-shadow .4s,border-color .4s}
+.editorial-work-grid .case:hover,.editorial-work-grid .case:focus-visible{box-shadow:0 18px 45px #102d5c2e;border-color:#d6e9ff}
+.editorial-work-grid .case .case-category{transition:transform .35s}
+.editorial-work-grid .case:hover .case-category{transform:translateY(4px)}
+/* Workflow is genuinely interactive, not an auto-running simulated process */
+.intro-panel{position:relative;overflow:hidden}
+.flow-demo-btn{position:absolute;right:26px;top:24px;z-index:3;border:1px solid #9ccaff8c;border-radius:50px;padding:10px 15px;color:#fff;background:#3874c9;cursor:pointer;font:600 12px Inter,system-ui,sans-serif}
+.flow-demo-btn:hover{background:#4e93ed}
+.intro-panel .flow-node{transition:background .4s,transform .4s,box-shadow .4s}
+.intro-panel .flow-node.is-active{background:#fc9235;color:#0f2d57;transform:translateY(-4px);box-shadow:0 7px 0 #0a2c56}
+.intro-panel .flow-node.is-complete{background:#275f9e}
+.flow-demo-state{display:block;font-size:11px;letter-spacing:.05em;color:#5180b6;font-weight:700;margin-bottom:5px}
+.flow-demo-final{display:block}
+.intro-panel:not(.flow-complete) .flow-demo-final{opacity:.6}
+.intro-panel.flow-complete .flow-demo-state{color:#27875b}
+/* Process walkthrough: scroll-activated step rather than indiscriminate movement */
+.process-step{position:relative;transition:opacity .5s,transform .5s,border-color .5s}
+.process-step::before{content:"";position:absolute;top:-2px;left:0;width:0;height:2px;background:#327bff;transition:width .55s ease}
+.process-step.is-current::before{width:100%}
+.process-step.is-current{transform:translateY(-5px)}
+.process-step.is-current h3{color:#286ee7}
+@media(prefers-reduced-motion:reduce){
+ .svc .svc-illustration,.svc .svc-spark,.svc .svc-cursor,.svc .svc-orbit,.svc .svc-status i{animation:none!important;transition:none!important}
+ .process-step,.case,.flow-node{transition:none!important;transform:none!important}
+}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -567,10 +624,10 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
   </div>
 </div>
     <div class="service-grid">
-      <a class="svc reveal" href="hizmetler/marka-kimligi.html" aria-label="Marka & Görsel Kimlik hizmetini incele"><div class="svc-art"><span class="num">01 / BRAND</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></a>
-      <a class="svc reveal" href="hizmetler/web-ui-ux.html" aria-label="Web & UI/UX hizmetini incele"><div class="svc-art"><span class="num">02 / DIGITAL</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></a>
-      <a class="svc reveal" href="hizmetler/3d-motion.html" aria-label="3D & Motion hizmetini incele"><div class="svc-art"><span class="num">03 / MOTION</span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></a>
-      <a class="svc reveal" href="hizmetler/ai-otomasyon.html" aria-label="AI & Otomasyon hizmetini incele"><div class="svc-art"><span class="num">04 / SYSTEM</span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></a>
+      <a class="svc reveal" href="hizmetler/marka-kimligi.html" aria-label="Marka & Görsel Kimlik hizmetini incele"><div class="svc-art"><span class="num">01 / BRAND</span><span class="svc-spark" aria-hidden="true">✦</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></a>
+      <a class="svc reveal" href="hizmetler/web-ui-ux.html" aria-label="Web & UI/UX hizmetini incele"><div class="svc-art"><span class="num">02 / DIGITAL</span><span class="svc-cursor" aria-hidden="true">↖</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></a>
+      <a class="svc reveal" href="hizmetler/3d-motion.html" aria-label="3D & Motion hizmetini incele"><div class="svc-art"><span class="num">03 / MOTION</span><span class="svc-orbit" aria-hidden="true"><span></span></span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></a>
+      <a class="svc reveal" href="hizmetler/ai-otomasyon.html" aria-label="AI & Otomasyon hizmetini incele"><div class="svc-art"><span class="num">04 / SYSTEM</span><span class="svc-status" aria-hidden="true"><i></i><i></i><i></i></span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></a>
     </div>
   </div>
 </section>
@@ -590,7 +647,7 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 <section class="section intro" id="yapay-zeka">
   <div class="contain intro-layout">
     <div class="reveal"><span class="eyebrow" style="color:#98baff">03 / AI & Yaratıcı sistemler</span><h2 class="display">Sadece tasarlamıyoruz.<br>Üretim sistemleri kuruyoruz.</h2><p class="lead">Brief’ten tasarıma, içerik üretiminden onay ve yayın akışına kadar insan yaratıcılığı ile otomasyonu birlikte çalıştıran süreçler tasarlıyoruz.</p><a class="inline-link" href="#surec" style="color:white">Nasıl çalışıyoruz? ↗</a></div>
-    <div class="intro-panel reveal"><span class="mini">Yaratıcı üretim akışı / Örnek yapı</span><div class="flow-row"><div class="flow-node">Brief</div><span class="flow-link">→</span><div class="flow-node">Strateji</div><span class="flow-link">→</span><div class="flow-node">Üretim</div></div><div class="flow-row" style="margin-top:16px"><div class="flow-node">Kontrol</div><span class="flow-link">→</span><div class="flow-node">Onay</div><span class="flow-link">→</span><div class="flow-node">Teslim</div></div><div class="flow-result">Daha kontrollü, daha tutarlı üretim<small>Otomasyon, insan onayının yerini değil; gereksiz tekrarları alır.</small></div></div>
+    <div class="intro-panel reveal"><span class="mini">Yaratıcı üretim akışı / Etkileşimli demo</span><button class="flow-demo-btn" type="button" aria-label="İş akışı demosunu çalıştır">Akışı başlat <span>↗</span></button><div class="flow-row"><div class="flow-node">Brief</div><span class="flow-link">→</span><div class="flow-node">Strateji</div><span class="flow-link">→</span><div class="flow-node">Üretim</div></div><div class="flow-row" style="margin-top:16px"><div class="flow-node">Kontrol</div><span class="flow-link">→</span><div class="flow-node">Onay</div><span class="flow-link">→</span><div class="flow-node">Teslim</div></div><div class="flow-result"><span class="flow-demo-state">Bir akış başlatın</span><span class="flow-demo-final">Daha kontrollü, daha tutarlı üretim</span><small>Otomasyon, insan onayının yerini değil; gereksiz tekrarları alır.</small></div></div>
   </div>
 </section>
 <section class="section" id="surec">
@@ -694,6 +751,54 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
  window.addEventListener('focus',checkNewBuild,{passive:true});
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkNewBuild()});
  setInterval(checkNewBuild,120000);
+})();
+</script>
+
+<script>
+/* Optional motion controls with reduced-motion and offscreen safeguards */
+(()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const panel=document.querySelector('#yapay-zeka .intro-panel');
+ const btn=panel?.querySelector('.flow-demo-btn');
+ const nodes=[...panel?.querySelectorAll('.flow-node')||[]];
+ let task=0,steps=[];
+ btn?.addEventListener('click',()=>{
+  steps.forEach(clearTimeout);steps=[];task++;
+  const run=task;
+  nodes.forEach(n=>n.classList.remove('is-active','is-complete'));
+  panel.classList.remove('flow-complete');
+  btn.disabled=true;btn.textContent='İşleniyor…';
+  const status=panel.querySelector('.flow-demo-state');
+  status.textContent='Akış hazırlanıyor';
+  nodes.forEach((node,i)=>{
+   steps.push(setTimeout(()=>{
+    if(task!==run)return;
+    nodes.forEach((n,j)=>{n.classList.toggle('is-active',j===i);n.classList.toggle('is-complete',j<i)});
+    status.textContent=(i+1)+' / '+nodes.length+' · '+node.textContent.trim();
+    if(i===nodes.length-1){
+     steps.push(setTimeout(()=>{
+      if(task!==run)return;
+      nodes.forEach(n=>{n.classList.remove('is-active');n.classList.add('is-complete')});
+      panel.classList.add('flow-complete');
+      status.textContent='Örnek süreç tamamlandı ✓';
+      btn.disabled=false;btn.innerHTML='Yeniden oynat <span>↗</span>';
+     },reduce?0:450));
+    }
+   },reduce?i*40:i*650));
+  });
+ });
+ if(!reduce&&'IntersectionObserver' in window){
+  const process=document.querySelector('#surec');
+  const steps=[...process?.querySelectorAll('.process-step')||[]];
+  const observer=new IntersectionObserver(entries=>{
+   for(const entry of entries){
+    if(!entry.isIntersecting)continue;
+    const n=steps.indexOf(entry.target);
+    steps.forEach((s,i)=>s.classList.toggle('is-current',i===n));
+   }
+  },{rootMargin:'-24% 0px -46% 0px',threshold:0});
+  steps.forEach(x=>observer.observe(x));
+ }
 })();
 </script>
 </body>
