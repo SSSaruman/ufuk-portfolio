@@ -405,6 +405,18 @@ html.is-loading,html.is-loading body{overflow:hidden}
 .update-toast[hidden]{display:none}
 .update-toast button{padding:10px 15px;border:0;border-radius:9px;background:#fff;color:#082347;font:700 13px Inter,"Segoe UI",sans-serif;cursor:pointer}
 @media(max-width:600px){.update-toast{left:12px;right:12px;bottom:12px;justify-content:space-between}}
+
+/* Second section: art remains an independent replaceable image */
+.service-head{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;gap:24px;min-height:355px}
+.service-copy{align-self:center}
+.service-copy .display{font-size:clamp(36px,3.05vw,53px);max-width:560px}
+.service-illustration{position:relative;align-self:center;min-width:0;padding-bottom:33px}
+.service-art-crop{width:100%;aspect-ratio:1.8;position:relative;overflow:hidden}
+.service-art-crop img{position:absolute;display:block;max-width:none;width:214.6%;height:auto;left:-107.3%;top:-3.5%;user-select:none}
+.service-art-link{position:absolute;right:2%;bottom:2px}
+.service-head+.service-grid{margin-top:12px}
+@media(max-width:900px){.service-head{grid-template-columns:1fr 1fr;gap:8px}.service-copy .display{font-size:clamp(31px,4vw,43px)}}
+@media(max-width:680px){.service-head{grid-template-columns:1fr;gap:24px}.service-illustration{width:100%;padding-bottom:32px}.service-art-crop{aspect-ratio:1.8}.service-copy .display{font-size:clamp(31px,8vw,43px)}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -471,7 +483,17 @@ html.is-loading,html.is-loading body{overflow:hidden}
 <main class="site-main">
 <section class="section" id="hizmetler">
   <div class="contain">
-    <div class="section-head reveal"><div><span class="eyebrow">01 / Neler yapıyorum?</span><h2 class="display">Bir fikri alıp<br>çalışan bir şeye dönüştürüyorum.</h2><p class="lead">Görsel kimlikten dijital deneyime, hareketli içerikten otomasyona kadar farklı disiplinleri tek bir yaratıcı süreçte birleştiriyorum.</p></div><a class="inline-link" href="#iletisim">Birlikte çalışalım ↗</a></div>
+    <div class="section-head service-head reveal">
+  <div class="service-copy">
+    <span class="eyebrow">01 / Neler yapıyorum?</span>
+    <h2 class="display">Bir fikri alıp<br>çalışan bir şeye dönüştürüyorum.</h2>
+    <p class="lead">Görsel kimlikten dijital deneyime, hareketli içerikten otomasyona kadar farklı disiplinleri tek bir yaratıcı süreçte birleştiriyorum.</p>
+  </div>
+  <div class="service-illustration">
+    <div class="service-art-crop"><img src="https://at.adobe.com/iEZQCuFafiUTsWFx" loading="lazy" decoding="async" alt="BARTSS karakterleri: masa başında bir fikri birlikte geliştiren iki lacivert figür ve turuncu saksılı yeşil bitki"></div>
+    <a class="inline-link service-art-link" href="#iletisim">Birlikte çalışalım ↗</a>
+  </div>
+</div>
     <div class="service-grid">
       <article class="svc reveal"><div class="svc-art"><span class="num">01 / BRAND</span><span class="svc-icon" aria-hidden="true">✳</span></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></article>
       <article class="svc reveal"><div class="svc-art"><span class="num">02 / DIGITAL</span><span class="svc-icon" aria-hidden="true">▣</span></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></article>
