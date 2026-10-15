@@ -391,6 +391,13 @@ html.is-loading,html.is-loading body{overflow:hidden}
  .brand-list{font-size:19px}
  .brand-track .brand-list{gap:36px;padding-right:36px}
 }
+
+/* Global navigation: fixed at all scroll positions */
+.nav{position:fixed;top:23px;z-index:900;padding:9px 15px;border-radius:18px;transition:background .3s ease,box-shadow .3s ease,top .3s ease,padding .3s ease}
+.nav.is-scrolled{top:12px;background:rgba(255,255,255,.93);box-shadow:0 10px 38px rgba(8,32,70,.13);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.nav a:focus-visible{outline:2px solid #2767cd;outline-offset:4px}
+@media(max-width:1100px){.nav{top:20px}}
+@media(max-width:760px){.nav{top:14px;padding:8px 10px}.nav.is-scrolled{top:8px}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -402,8 +409,7 @@ html.is-loading,html.is-loading body{overflow:hidden}
 <div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="BARTSS sitesi yükleniyor">
  <div class="loader-inner"><div class="loader-logo">BARTSS</div><div class="loader-key" aria-hidden="true"></div><div class="loader-caption">SAHNE HAZIRLANIYOR</div><div class="loader-progress" aria-hidden="true"></div></div>
 </div>
-<section class="hero">
-  <img class="hero-bg" fetchpriority="high" decoding="async" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
+
 
   <header class="nav">
     <div class="brand">BARTSS</div>
@@ -416,6 +422,8 @@ html.is-loading,html.is-loading body{overflow:hidden}
       <a class="pill dark" href="#iletisim"><span class="dot"></span>Toplantı planla</a>
     </div>
   </header>
+<section class="hero">
+  <img class="hero-bg" fetchpriority="high" decoding="async" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
 
   <div class="copy">
     <h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1>
@@ -542,6 +550,16 @@ html.is-loading,html.is-loading body{overflow:hidden}
   new Promise(resolve=>setTimeout(resolve,maxTime))
  ]).then(reveal,reveal);
  window.addEventListener('pageshow',e=>{if(e.persisted)reveal()});
+})();
+</script>
+<script>
+(function(){
+ const nav=document.querySelector('.nav');
+ if(!nav)return;
+ let pending=false;
+ function update(){nav.classList.toggle('is-scrolled',window.scrollY>48);pending=false;}
+ window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update)}},{passive:true});
+ update();
 })();
 </script>
 </body>
