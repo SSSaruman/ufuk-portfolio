@@ -7,55 +7,134 @@
 <style>
 :root{--ink:#0a2348;--green:#28d65f}
 *{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;background:#fff;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-body{overflow:hidden}
-.hero{position:relative;width:100vw;height:100vh;overflow:hidden;background:#eef4ff}
-.hero-wide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.design{
-  position:absolute;left:50%;top:50%;
-  width:1097px;height:704px;
-  transform-origin:center center;
-  overflow:hidden;color:var(--ink);
+html,body{margin:0;width:100%;min-height:100%;background:#fff;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow-x:hidden}
+.hero{
+  position:relative;
+  width:100%;
+  height:clamp(720px,56.25vw,920px);
+  overflow:hidden;
   background:#eef4ff;
+  color:var(--ink);
 }
-.design-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;z-index:0}
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+  display:block;z-index:0;
+}
 
-/* exact desktop composition */
-.nav{position:absolute;left:225px;top:13px;width:636px;height:28px;display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:16px;z-index:20;font-size:7px;font-weight:600}
-.brand{font-size:16px;font-weight:900;letter-spacing:.08em}
-.nav-links{display:flex;justify-content:center;align-items:center;gap:22px;white-space:nowrap}
-.nav-actions{display:flex;align-items:center;gap:7px}
-.pill{height:28px;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:0 12px;border:1px solid rgba(10,35,72,.55);background:rgba(255,255,255,.45);color:var(--ink);text-decoration:none;font-weight:800}
+/* independent responsive header */
+.nav{
+  position:absolute;top:20px;left:50%;
+  width:min(1280px,calc(100% - 64px));
+  transform:translateX(-50%);
+  display:grid;grid-template-columns:180px 1fr auto;
+  align-items:center;gap:28px;z-index:20;
+  font-size:clamp(12px,.72vw,15px);font-weight:650;
+}
+.brand{font-size:clamp(20px,1.25vw,24px);font-weight:900;letter-spacing:.08em}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:clamp(20px,1.6vw,32px);white-space:nowrap}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.pill{
+  min-height:38px;display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border-radius:999px;padding:0 16px;
+  border:1px solid rgba(10,35,72,.48);
+  background:rgba(255,255,255,.55);color:var(--ink);
+  text-decoration:none;font-weight:800;backdrop-filter:blur(6px)
+}
 .pill.dark{background:#0a2348;color:#fff;border-color:#0a2348}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
 
-.copy{position:absolute;left:50%;top:76px;width:500px;transform:translateX(-50%);text-align:center;z-index:18}
-.copy h1{margin:0;font-size:34px;line-height:1.06;letter-spacing:-.04em;font-weight:900}
-.copy p{width:365px;margin:10px auto 0;font-size:10px;line-height:1.18;font-weight:760}
-.ctas{margin-top:23px;display:flex;justify-content:center;gap:8px}
-.cta{height:42px;border:0;border-radius:999px;padding:0 26px;background:#fff;color:#1c1c1c;font-size:11px;font-weight:800;box-shadow:0 6px 20px rgba(20,52,98,.06)}
-.social-proof{height:42px;border-radius:999px;padding:0 15px 0 7px;background:#0a2348;color:#fff;display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:850}
+/* headline block */
+.copy{
+  position:absolute;top:78px;left:50%;
+  width:min(760px,82vw);transform:translateX(-50%);
+  text-align:center;z-index:18;
+}
+.copy h1{
+  margin:0;
+  font-size:clamp(42px,3.15vw,62px);
+  line-height:1.02;letter-spacing:-.045em;font-weight:900;
+}
+.copy p{
+  width:min(560px,90%);margin:14px auto 0;
+  font-size:clamp(13px,.95vw,17px);line-height:1.2;font-weight:760;
+}
+.ctas{margin-top:22px;display:flex;justify-content:center;gap:10px}
+.cta{
+  height:46px;border:0;border-radius:999px;padding:0 28px;background:#fff;
+  color:#1c1c1c;font-size:14px;font-weight:800;
+  box-shadow:0 8px 30px rgba(20,52,98,.08)
+}
+.social-proof{
+  height:46px;border-radius:999px;padding:0 16px 0 8px;background:#0a2348;color:#fff;
+  display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:850
+}
 .avatars{display:flex;align-items:center}
-.avatar{width:24px;height:24px;margin-right:-7px;border-radius:50%;border:1.5px solid #0a2348;display:grid;place-items:center;font-size:8px;font-weight:900}
-.a1{background:#ff604e}.a2{background:#3f9cff}.a3{width:11px;height:11px;margin-left:2px;border:0;background:var(--green)}
+.avatar{
+  width:26px;height:26px;margin-right:-8px;border-radius:50%;border:1.5px solid #0a2348;
+  display:grid;place-items:center;font-size:8px;font-weight:900
+}
+.a1{background:#ff604e}.a2{background:#3f9cff}.a3{width:12px;height:12px;margin:0 0 0 2px;border:0;background:var(--green)}
 
-.scene{position:absolute;inset:0;z-index:4;pointer-events:none}
-.char-window{position:absolute;inset:0;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 69.2%,0 69.2%);z-index:4}
-.characters{position:absolute;left:369px;top:302px;width:386px;height:auto;transform-origin:50% 88%;animation:charBob 4.6s ease-in-out infinite}
-.enter{position:absolute;left:491px;top:527px;width:180px;height:auto;z-index:5;transform-origin:50% 88%;animation:keyPress 2.05s cubic-bezier(.22,.72,.2,1) infinite}
-.hand{position:absolute;left:349px;top:367px;width:267px;height:auto;z-index:7;animation:handPress 2.05s cubic-bezier(.22,.72,.2,1) infinite}
-.impact{position:absolute;left:428px;top:495px;width:245px;height:auto;z-index:8;opacity:0;transform-origin:50% 50%;animation:impactPop 2.05s ease-out infinite}
+/* responsive scene canvas — motion layers stay proportional */
+.scene{
+  position:absolute;
+  left:50%;bottom:22px;
+  width:min(1120px,72vw);
+  aspect-ratio:1097/704;
+  transform:translateX(-50%);
+  z-index:4;pointer-events:none;
+}
+.char-window{
+  position:absolute;inset:0;overflow:hidden;
+  clip-path:polygon(0 0,100% 0,100% 69.5%,0 69.5%);
+  z-index:4;
+}
+.characters{
+  position:absolute;left:36.3%;top:41.7%;width:30.4%;height:auto;
+  transform-origin:50% 88%;
+  animation:charBob 4.6s ease-in-out infinite;
+}
+.enter{
+  position:absolute;left:42.0%;top:73.2%;width:18.4%;height:auto;z-index:5;
+  transform-origin:50% 88%;
+  animation:keyPress 2.05s cubic-bezier(.22,.72,.2,1) infinite;
+}
+.hand{
+  position:absolute;left:31.5%;top:52.0%;width:24.6%;height:auto;z-index:7;
+  animation:handPress 2.05s cubic-bezier(.22,.72,.2,1) infinite;
+}
+.impact{
+  position:absolute;left:39.1%;top:68.1%;width:23.5%;height:auto;z-index:8;
+  opacity:0;transform-origin:50% 50%;
+  animation:impactPop 2.05s ease-out infinite;
+}
 
-.brand-strip{position:absolute;left:0;right:0;bottom:0;height:76px;background:rgba(255,255,255,.98);z-index:14;border-top:1px solid rgba(10,35,72,.05)}
-.brand-strip-inner{width:695px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:18px;padding-top:12px}
-.brand-strip small{display:block;font-size:9px;color:#777;margin-bottom:8px}
-.brand-list{display:flex;gap:42px;align-items:center;color:#c9c9c9;font-size:17px;font-weight:850;white-space:nowrap}
-.all-brands{margin-top:3px;font-size:8px;color:#333;text-decoration:none;white-space:nowrap;border-bottom:1px solid #333;padding-bottom:3px}
+/* brand strip */
+.brand-strip{
+  position:absolute;left:0;right:0;bottom:0;height:86px;z-index:14;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid rgba(10,35,72,.05)
+}
+.brand-strip-inner{
+  width:min(1180px,calc(100% - 64px));height:100%;margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;align-items:start;padding-top:14px;gap:24px
+}
+.brand-strip small{display:block;font-size:11px;color:#777;margin-bottom:10px}
+.brand-list{
+  display:flex;align-items:center;justify-content:space-between;gap:28px;
+  color:#c9c9c9;font-weight:850;font-size:clamp(14px,1vw,19px);white-space:nowrap
+}
+.all-brands{
+  margin-top:4px;font-size:10px;color:#333;text-decoration:none;white-space:nowrap;
+  border-bottom:1px solid #333;padding-bottom:3px
+}
 
 @keyframes handPress{
-  0%,17%,100%{transform:translateY(-8px)}
+  0%,17%,100%{transform:translateY(-9px)}
   34%,50%{transform:translateY(0)}
-  68%{transform:translateY(-8px)}
+  68%{transform:translateY(-9px)}
 }
 @keyframes keyPress{
   0%,23%,100%{transform:translateY(0)}
@@ -65,12 +144,45 @@ body{overflow:hidden}
 @keyframes impactPop{
   0%,31%,100%{opacity:0;transform:scale(.92)}
   37%{opacity:1;transform:scale(1)}
-  47%{opacity:1;transform:scale(1.02)}
+  47%{opacity:1;transform:scale(1.025)}
   58%{opacity:0;transform:scale(1.06)}
 }
 @keyframes charBob{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(1.5px)}
+}
+
+/* tablet */
+@media(max-width:1100px){
+  .hero{height:clamp(700px,72vw,820px)}
+  .nav{width:calc(100% - 40px);grid-template-columns:150px 1fr auto;gap:16px}
+  .nav-links{gap:16px;font-size:12px}
+  .copy{top:76px}
+  .copy h1{font-size:clamp(38px,5vw,52px)}
+  .scene{width:min(960px,88vw);bottom:18px}
+  .brand-strip-inner{width:calc(100% - 40px)}
+}
+
+/* mobile */
+@media(max-width:760px){
+  .hero{height:780px}
+  .nav{
+    top:14px;width:calc(100% - 28px);
+    grid-template-columns:1fr auto;
+  }
+  .nav-links{display:none}
+  .brand{font-size:18px}
+  .pill{min-height:34px;padding:0 12px;font-size:11px}
+  .copy{top:72px;width:92vw}
+  .copy h1{font-size:clamp(34px,10vw,48px)}
+  .copy p{font-size:13px;width:88%}
+  .ctas{margin-top:18px;gap:8px}
+  .cta,.social-proof{height:42px;font-size:11px}
+  .scene{width:980px;max-width:none;bottom:32px}
+  .brand-strip{height:76px}
+  .brand-strip-inner{width:calc(100% - 28px)}
+  .brand-list{gap:18px;font-size:13px;overflow:hidden}
+  .all-brands{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .hand,.enter,.impact,.characters{animation:none!important}
@@ -80,74 +192,57 @@ body{overflow:hidden}
 </head>
 <body>
 <section class="hero">
-  <img class="hero-wide" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
-  <div class="design" id="design">
-    <img class="design-bg" src="https://at.adobe.com/7VOjnv8EePTSRWHt" alt="">
+  <img class="hero-bg" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
 
-    <header class="nav">
-      <div class="brand">BARTSS</div>
-      <nav class="nav-links">
-        <span>Hizmetler</span><span>Projeler</span><span>Fiyatlar</span>
-        <span>Blog</span><span>Kurumsal</span><span>İletişim</span>
-      </nav>
-      <div class="nav-actions">
-        <a class="pill" href="#">Panel</a>
-        <a class="pill dark" href="#"><span class="dot"></span>Toplantı planla</a>
-      </div>
-    </header>
-
-    <div class="copy">
-      <h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1>
-      <p>Sosyal medya, yapay zeka reklam filmi, web ve marka kimliğini araştırmayla başlatan, stratejiyle kuran ve planla yürüten marka laboratuvarı.</p>
-      <div class="ctas">
-        <button class="cta" type="button">Çalışmaları gör</button>
-        <div class="social-proof">
-          <span class="avatars">
-            <span class="avatar a1">UK</span>
-            <span class="avatar a2">EAK</span>
-            <span class="avatar a3"></span>
-          </span>
-          <span>15 dk tanış</span>
-        </div>
-      </div>
+  <header class="nav">
+    <div class="brand">BARTSS</div>
+    <nav class="nav-links">
+      <span>Hizmetler</span><span>Projeler</span><span>Fiyatlar</span>
+      <span>Blog</span><span>Kurumsal</span><span>İletişim</span>
+    </nav>
+    <div class="nav-actions">
+      <a class="pill" href="#">Panel</a>
+      <a class="pill dark" href="#"><span class="dot"></span>Toplantı planla</a>
     </div>
+  </header>
 
-    <div class="scene">
-      <div class="char-window">
-        <img class="characters" src="https://at.adobe.com/iJqL5Uah0PteO7uu" alt="">
-      </div>
-      <img class="enter" src="https://at.adobe.com/yoAtSnjeGAwuVKMg" alt="">
-      <img class="hand" src="https://at.adobe.com/E6d2fAYFU4nqceqA" alt="">
-      <img class="impact" src="https://at.adobe.com/iwBV2iUguD5o9W0Q" alt="">
-    </div>
-
-    <div class="brand-strip">
-      <div class="brand-strip-inner">
-        <div>
-          <small>Birlikte çalıştığımız markalar</small>
-          <div class="brand-list">
-            <span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span>
-            <span>AutoLAB</span><span>AGENS</span><span>COMCE</span>
-          </div>
-        </div>
-        <a class="all-brands" href="#">Tüm markaları gör ↗</a>
+  <div class="copy">
+    <h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1>
+    <p>Sosyal medya, yapay zeka reklam filmi, web ve marka kimliğini araştırmayla başlatan, stratejiyle kuran ve planla yürüten marka laboratuvarı.</p>
+    <div class="ctas">
+      <button class="cta" type="button">Çalışmaları gör</button>
+      <div class="social-proof">
+        <span class="avatars">
+          <span class="avatar a1">UK</span>
+          <span class="avatar a2">EAK</span>
+          <span class="avatar a3"></span>
+        </span>
+        <span>15 dk tanış</span>
       </div>
     </div>
   </div>
-</section>
 
-<script>
-(function(){
-  const design=document.getElementById('design');
-  function fit(){
-    const sx=window.innerWidth/1097;
-    const sy=window.innerHeight/704;
-    const s=Math.min(sx,sy);
-    design.style.transform='translate(-50%,-50%) scale('+s+')';
-  }
-  fit();
-  addEventListener('resize',fit,{passive:true});
-})();
-</script>
+  <div class="scene">
+    <div class="char-window">
+      <img class="characters" src="https://at.adobe.com/iJqL5Uah0PteO7uu" alt="">
+    </div>
+    <img class="enter" src="https://at.adobe.com/yoAtSnjeGAwuVKMg" alt="">
+    <img class="hand" src="https://at.adobe.com/E6d2fAYFU4nqceqA" alt="">
+    <img class="impact" src="https://at.adobe.com/iwBV2iUguD5o9W0Q" alt="">
+  </div>
+
+  <div class="brand-strip">
+    <div class="brand-strip-inner">
+      <div>
+        <small>Birlikte çalıştığımız markalar</small>
+        <div class="brand-list">
+          <span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span>
+          <span>AutoLAB</span><span>AGENS</span><span>COMCE</span>
+        </div>
+      </div>
+      <a class="all-brands" href="#">Tüm markaları gör ↗</a>
+    </div>
+  </div>
+</section>
 </body>
 </html>
