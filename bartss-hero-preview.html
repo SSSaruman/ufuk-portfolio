@@ -544,6 +544,42 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
  .svc .svc-illustration,.svc .svc-spark,.svc .svc-cursor,.svc .svc-orbit,.svc .svc-status i{animation:none!important;transition:none!important}
  .process-step,.case,.flow-node{transition:none!important;transform:none!important}
 }
+
+/* MOTION V2: visible without hover. Only lower sections. */
+@keyframes bartssFloat{0%,100%{transform:translate3d(0,0,0) rotate(-2deg)}50%{transform:translate3d(0,-17px,0) rotate(2deg)}}
+@keyframes bartssBob{0%,100%{transform:translate3d(0,5px,0) rotate(-3deg)}50%{transform:translate3d(0,-14px,0) rotate(4deg)}}
+@keyframes bartssPulse{0%,100%{opacity:.32;transform:scale(.72)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes bartssSweep{0%{transform:translateX(-170%) skewX(-18deg)}100%{transform:translateX(500%) skewX(-18deg)}}
+@keyframes bartssArtOrbit{to{transform:rotate(360deg)}}
+@keyframes bartssArrival{from{opacity:0;transform:translate3d(0,60px,0) scale(.94)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes bartssFlowGlow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.24)}}
+#hizmetler .svc-art{isolation:isolate}
+#hizmetler .svc-art::after{content:"";pointer-events:none;position:absolute;z-index:2;top:-35%;bottom:-35%;left:0;width:24%;background:linear-gradient(90deg,transparent,#ffffff42,transparent);transform:translateX(-170%) skewX(-18deg);animation:bartssSweep 6.8s ease-in-out infinite}
+#hizmetler .svc:nth-child(2) .svc-art::after{animation-delay:1.3s}
+#hizmetler .svc:nth-child(3) .svc-art::after{animation-delay:2.6s}
+#hizmetler .svc:nth-child(4) .svc-art::after{animation-delay:3.9s}
+#hizmetler .svc .svc-illustration{animation:bartssFloat 3.8s ease-in-out infinite;will-change:transform}
+#hizmetler .svc:nth-child(2) .svc-illustration{animation:bartssBob 4.3s ease-in-out infinite}
+#hizmetler .svc:nth-child(3) .svc-illustration{animation:bartssFloat 5.1s ease-in-out infinite reverse}
+#hizmetler .svc:nth-child(4) .svc-illustration{animation:bartssBob 3.5s ease-in-out infinite}
+#hizmetler .svc .svc-spark{opacity:1;animation:bartssPulse 2.5s ease-in-out infinite}
+#hizmetler .svc .svc-cursor{opacity:1;animation:bartssCursor 3.8s ease-in-out infinite}
+#hizmetler .svc .svc-orbit{opacity:.75;animation:bartssArtOrbit 10s linear infinite}
+#hizmetler .svc .svc-status{opacity:1}
+#hizmetler .svc .svc-status i{animation:bartssSignal 1.6s ease-in-out infinite}
+#hizmetler .svc:hover .svc-illustration{animation-play-state:paused;transform:scale(1.11) translateY(-12px)}
+#hizmetler .svc:hover{box-shadow:0 24px 50px rgba(15,51,104,.15)}
+/* Strong staged appearance in project grid, without hiding non-JS content */
+#projeler .editorial-work-grid .case.motion-in{animation:bartssArrival .9s cubic-bezier(.15,.85,.15,1) both}
+#projeler .editorial-work-grid .case:nth-child(2){animation-delay:.1s}
+#projeler .editorial-work-grid .case:nth-child(3){animation-delay:.22s}
+#projeler .editorial-work-grid .case:nth-child(4){animation-delay:.34s}
+#projeler .editorial-work-grid .case:nth-child(5){animation-delay:.46s}
+#projeler .editorial-work-grid .case.featured:hover .case-image{transform:scale(1.12) rotate(-1deg)}
+#yapay-zeka .intro-panel{animation:bartssFlowGlow 5s ease-in-out infinite}
+#surec .process-step.is-current{transform:translate3d(12px,-5px,0);background:linear-gradient(90deg,#dce9ff,#fff0 80%);border-radius:12px}
+#surec .process-step.is-current::before{height:4px}
+@media(prefers-reduced-motion:reduce){#hizmetler .svc-art::after,#hizmetler .svc .svc-illustration,#hizmetler .svc .svc-spark,#hizmetler .svc .svc-cursor,#hizmetler .svc .svc-orbit,#hizmetler .svc .svc-status i,#yapay-zeka .intro-panel,#projeler .editorial-work-grid .case.motion-in{animation:none!important}#surec .process-step.is-current{transform:none}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -801,5 +837,12 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
  }
 })();
 </script>
-</body>
+<script>
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const cards=[...document.querySelectorAll('#projeler .editorial-work-grid .case')];
+ if(!('IntersectionObserver' in window)){cards.forEach(x=>x.classList.add('motion-in'));return}
+ const seen=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('motion-in');seen.unobserve(e.target)}})},{threshold:.08});
+ cards.forEach(x=>seen.observe(x));
+})();
+</script></body>
 </html>
