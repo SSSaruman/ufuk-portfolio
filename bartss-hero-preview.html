@@ -224,6 +224,15 @@ body{overflow-x:hidden}
  .scene{width:980px;bottom:0}
  .brand-strip{height:auto;min-height:78px}
 }
+
+/* Blink overlay bound to the original character sprite */
+.characters-wrap{position:absolute;left:36.3%;top:42.8%;width:30.4%;transform-origin:50% 88%;animation:charBob 4.6s ease-in-out infinite}
+.characters-wrap .characters{position:relative;left:auto;top:auto;width:100%;height:auto;display:block;animation:none}
+.blink{position:absolute;width:2.3%;height:2.2%;border-radius:50%;background:#031638;opacity:0;transform:scaleY(.1);animation:blink 7.8s steps(1,end) infinite;pointer-events:none}
+.blink.e1{left:33.75%;top:9.1%}.blink.e2{left:37.9%;top:7.2%;width:2.6%;height:3%}
+.blink.e3{left:73.05%;top:40.1%}.blink.e4{left:77.8%;top:44%;width:2.5%;height:3%}
+@keyframes blink{0%,43%,46%,100%{opacity:0}44%,45%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.characters-wrap,.blink{animation:none!important}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -265,7 +274,7 @@ body{overflow-x:hidden}
 
   <div class="scene">
     <div class="char-window">
-      <img class="characters" src="https://at.adobe.com/iJqL5Uah0PteO7uu" alt="">
+      <div class="characters-wrap"><img class="characters" src="https://at.adobe.com/iJqL5Uah0PteO7uu" alt=""><i class="blink e1"></i><i class="blink e2"></i><i class="blink e3"></i><i class="blink e4"></i></div>
     </div>
     <img class="enter" src="https://at.adobe.com/yoAtSnjeGAwuVKMg" alt="">
     <img class="hand" src="https://at.adobe.com/E6d2fAYFU4nqceqA" alt="">
