@@ -350,6 +350,18 @@ html,body{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:400}
  .section-head{margin-bottom:28px}
  .case-grid{grid-template-columns:1fr}
 }
+
+/* Precise +5% key width: 20.2% -> 21.21%; preserve center */
+.enter{width:21.21%;left:40.695%}
+/* Seamless partner ticker */
+.brand-strip-inner{grid-template-columns:minmax(0,1fr) auto}
+.brand-strip-inner>div:first-child{min-width:0}
+.brand-marquee{width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent)}
+.brand-track{display:flex;width:max-content;animation:brandsSlide 24s linear infinite;will-change:transform}
+.brand-track .brand-list{display:flex;flex:0 0 auto;align-items:center;justify-content:initial;gap:42px;padding-right:42px}
+.brand-marquee:hover .brand-track{animation-play-state:paused}
+@keyframes brandsSlide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.brand-track{animation:none}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -403,10 +415,7 @@ html,body{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:400}
     <div class="brand-strip-inner">
       <div>
         <small>Birlikte çalıştığımız markalar</small>
-        <div class="brand-list">
-          <span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span>
-          <span>AutoLAB</span><span>AGENS</span><span>COMCE</span>
-        </div>
+        <div class="brand-marquee" aria-label="Birlikte çalıştığımız markalar"><div class="brand-track"><div class="brand-list"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div><div class="brand-list" aria-hidden="true"><span>Fiorras</span><span>Akay</span><span>Asiatic</span><span>ADA</span><span>AutoLAB</span><span>AGENS</span><span>COMCE</span></div></div></div>
       </div>
       <a class="all-brands" href="#projeler">Çalışmaları keşfet ↗</a>
     </div>
