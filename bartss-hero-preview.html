@@ -580,6 +580,46 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
 #surec .process-step.is-current{transform:translate3d(12px,-5px,0);background:linear-gradient(90deg,#dce9ff,#fff0 80%);border-radius:12px}
 #surec .process-step.is-current::before{height:4px}
 @media(prefers-reduced-motion:reduce){#hizmetler .svc-art::after,#hizmetler .svc .svc-illustration,#hizmetler .svc .svc-spark,#hizmetler .svc .svc-cursor,#hizmetler .svc .svc-orbit,#hizmetler .svc .svc-status i,#yapay-zeka .intro-panel,#projeler .editorial-work-grid .case.motion-in{animation:none!important}#surec .process-step.is-current{transform:none}}
+
+/* BARTSS rich footer inspired by editorial navigation, not copied */
+.bartss-footer{background:linear-gradient(135deg,#092346,#071a35 70%);color:#fff;padding:68px 0 0;overflow:hidden}
+.bartss-footer .bf-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;padding-bottom:57px}
+.bartss-footer .footer-logo{display:inline-flex;align-items:center;gap:9px;font-size:35px;letter-spacing:-.045em;color:#fff;font-weight:850;text-decoration:none}
+.bf-star{color:#ff9351;font-size:24px;display:inline-block;animation:bfRotate 13s linear infinite}
+@keyframes bfRotate{to{transform:rotate(360deg)}}
+.bf-top p{color:#a9bdd8;max-width:340px;line-height:1.6;font-size:13px}
+.bf-reach{display:flex;flex-direction:column;gap:15px;align-items:flex-end}
+.bf-project{display:inline-flex;align-items:center;gap:24px;border-radius:90px;background:#f5f8ff;color:#0c2b58!important;text-decoration:none;padding:15px 21px;font-weight:700;font-size:13px;transition:transform .25s}
+.bf-project:hover{transform:translateY(-4px)}
+.bf-mail{color:#d3e0f7;font-size:13px;text-decoration:none}
+.bf-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;padding-bottom:66px}
+.bf-columns>div{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+.bf-label{font-size:12px;color:#809dc4;margin-bottom:8px;font-weight:700}
+.bf-columns a{font-size:14px;font-weight:520;color:#f1f5ff;text-decoration:none;transition:transform .2s,color .2s}
+.bf-columns a:hover{transform:translateX(5px);color:#ffb482}
+.bf-ask{border-top:1px solid #47618675;border-bottom:1px solid #47618675;padding:29px 0;display:flex;align-items:center;column-gap:35px;row-gap:12px;flex-wrap:wrap}
+.bf-ask>span{color:#a9c2e6;font-size:13px;font-weight:650}
+.bf-ai-links{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
+.bf-ai,.bf-copy{border:0;background:transparent;padding:4px 0;color:#f8f9ff;font:650 14px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:color .2s}
+.bf-ai:hover,.bf-copy:hover{color:#ffac72}
+.bf-copy{color:#92b8f4;font-size:12px}
+.bf-ai-note{width:100%;font-size:11px;color:#83a0c9!important}
+.bf-bottom{padding:27px 0;display:flex;justify-content:space-between;gap:22px;font-size:12px;color:#9bb5d7}
+.bf-bottom a{color:#f4f6fb;text-decoration:none}
+.svc-art .sv-mini{position:absolute;z-index:5;bottom:13px;left:14px;pointer-events:none;display:flex;gap:5px;align-items:center;filter:drop-shadow(0 3px 5px #163c5222)}
+.sv-brand span{width:19px;height:19px;border:2px solid white;border-radius:50%;animation:swatchPop 3s ease-in-out infinite}
+.sv-brand span:nth-child(2){animation-delay:.22s}.sv-brand span:nth-child(3){animation-delay:.44s}
+@keyframes swatchPop{50%{transform:translateY(-5px)}}
+.sv-web{background:#f7fbff;border:2px solid #0b2b5b;padding:4px 7px;border-radius:6px;width:62px;height:33px;flex-wrap:wrap}
+.sv-web i{width:100%;height:4px;background:#f19b54;border-radius:3px}
+.sv-web b{width:33%;height:12px;background:#3d79d2;border-radius:2px}
+.sv-web em{flex:1;height:12px;background:repeating-linear-gradient(to bottom,#9ab5d2 0 2px,transparent 2px 5px)}
+.sv-frames{background:#f2f7ff;border-radius:30px;padding:5px 9px;color:#1a4782;font-size:11px}
+.sv-frames span{animation:swatchPop 3s infinite}.sv-frames span:nth-child(2){animation-delay:.3s}.sv-frames span:nth-child(3){animation-delay:.6s}
+.sv-flow{background:#edf6ff;border-radius:30px;padding:5px 9px;color:#2155a3;font-size:12px}
+.sv-flow i{width:14px;height:2px;background:#ee9146;animation:bartssSignal 2s infinite}
+@media(max-width:750px){.bartss-footer .bf-top{flex-direction:column}.bf-reach{align-items:flex-start}.bf-columns{grid-template-columns:repeat(2,1fr);gap:35px 22px}.bf-ai-links{gap:13px}.bf-bottom{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.bf-star,.sv-brand span,.sv-frames span,.sv-flow i{animation:none!important}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="./assets/hero-office.jpg">
@@ -660,10 +700,10 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
   </div>
 </div>
     <div class="service-grid">
-      <a class="svc reveal" href="hizmetler/marka-kimligi.html" aria-label="Marka & Görsel Kimlik hizmetini incele"><div class="svc-art"><span class="num">01 / BRAND</span><span class="svc-spark" aria-hidden="true">✦</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></a>
-      <a class="svc reveal" href="hizmetler/web-ui-ux.html" aria-label="Web & UI/UX hizmetini incele"><div class="svc-art"><span class="num">02 / DIGITAL</span><span class="svc-cursor" aria-hidden="true">↖</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></a>
-      <a class="svc reveal" href="hizmetler/3d-motion.html" aria-label="3D & Motion hizmetini incele"><div class="svc-art"><span class="num">03 / MOTION</span><span class="svc-orbit" aria-hidden="true"><span></span></span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></a>
-      <a class="svc reveal" href="hizmetler/ai-otomasyon.html" aria-label="AI & Otomasyon hizmetini incele"><div class="svc-art"><span class="num">04 / SYSTEM</span><span class="svc-status" aria-hidden="true"><i></i><i></i><i></i></span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></a>
+      <a class="svc reveal" href="hizmetler/marka-kimligi.html" aria-label="Marka & Görsel Kimlik hizmetini incele"><div class="svc-art"><span class="num">01 / BRAND</span><div class="sv-mini sv-brand" aria-hidden="true"><span style="background:#092c61"></span><span style="background:#f18f44"></span><span style="background:#f6d4a2"></span></div><span class="svc-spark" aria-hidden="true">✦</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></a>
+      <a class="svc reveal" href="hizmetler/web-ui-ux.html" aria-label="Web & UI/UX hizmetini incele"><div class="svc-art"><span class="num">02 / DIGITAL</span><div class="sv-mini sv-web" aria-hidden="true"><i></i><b></b><em></em></div><span class="svc-cursor" aria-hidden="true">↖</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></a>
+      <a class="svc reveal" href="hizmetler/3d-motion.html" aria-label="3D & Motion hizmetini incele"><div class="svc-art"><span class="num">03 / MOTION</span><div class="sv-mini sv-frames" aria-hidden="true"><span>◀</span><span>▮▮</span><span>▶</span></div><span class="svc-orbit" aria-hidden="true"><span></span></span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></a>
+      <a class="svc reveal" href="hizmetler/ai-otomasyon.html" aria-label="AI & Otomasyon hizmetini incele"><div class="svc-art"><span class="num">04 / SYSTEM</span><div class="sv-mini sv-flow" aria-hidden="true"><span>◉</span><i></i><span>✦</span><i></i><span>✓</span></div><span class="svc-status" aria-hidden="true"><i></i><i></i><i></i></span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></a>
     </div>
   </div>
 </section>
@@ -707,7 +747,18 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
   <div class="contain reveal"><span class="eyebrow">06 / Projenizi konuşalım</span><h2 class="display">Aklında bir fikir<br>mi var?</h2><p style="max-width:580px;font-size:19px;line-height:1.55">Markanı, ürününü veya dijital deneyimini konuşalım. Nereden başlayacağımızı birlikte netleştirebiliriz.</p><a class="contact-btn" href="https://github.com/SSSaruman" target="_blank" rel="noopener noreferrer">İletişime geç ↗</a></div>
 </section>
 </main>
-<footer class="footer"><div class="contain footer-layout"><div><div class="footer-logo">BARTSS</div><small>Yaratıcı tasarım ve dijital üretim stüdyosu.</small></div><nav class="footer-links"><a href="#hizmetler">Hizmetler</a><a href="#projeler">İşlerimiz</a><a href="#yapay-zeka">AI sistemler</a><a href="#surec">Süreç</a><a href="#hakkimda">Hakkımızda</a><a href="#iletisim">İletişim</a></nav><small>© 2026 BARTSS</small></div></footer>
+<footer class="footer bartss-footer" id="footer">
+<div class="contain">
+ <div class="bf-top"><div><a class="footer-logo" href="bartss-hero-preview.html">BARTSS<span class="bf-star">✳</span></a><p>Bir fikri tasarıma, tasarımı çalışan bir deneyime dönüştürüyoruz.</p></div><div class="bf-reach"><a class="bf-project" href="#iletisim">Bir proje konuşalım <span>↗</span></a><a class="bf-mail" href="mailto:hello@bartss.com">İletişim için yazın ↗</a></div></div>
+ <div class="bf-columns">
+  <div><span class="bf-label">Hizmetler</span><a href="hizmetler/marka-kimligi.html">Marka & Görsel Kimlik</a><a href="hizmetler/web-ui-ux.html">Web & UI/UX</a><a href="hizmetler/3d-motion.html">3D & Motion</a><a href="hizmetler/ai-otomasyon.html">AI & Otomasyon</a></div>
+  <div><span class="bf-label">Çalışmalar</span><a href="#projeler">Seçili işler</a><a href="brover-studio.html">Brover Studio</a><a href="#projeler">Oyun arayüzleri</a><a href="#yapay-zeka">Yaratıcı sistemler</a></div>
+  <div><span class="bf-label">Stüdyo</span><a href="#hakkimda">Hakkımızda</a><a href="#surec">Çalışma sürecimiz</a><a href="#iletisim">İletişim</a><a href="#hizmetler">Tüm hizmetler</a></div>
+  <div><span class="bf-label">Keşfet</span><a href="#yapay-zeka">AI & Otomasyon</a><a href="#projeler">Neler ürettik?</a><a href="#hizmetler">Nasıl yardımcı oluruz?</a><a href="#iletisim">Birlikte çalışalım ↗</a></div>
+ </div>
+ <div class="bf-ask"><span>Yapay zekâya BARTSS'ı sor</span><div class="bf-ai-links"><a class="bf-ai" target="_blank" rel="noopener" href="https://chatgpt.com/?q=BARTSS%20yarat%C4%B1c%C4%B1%20tasar%C4%B1m%20st%C3%BCdyosu%20hakk%C4%B1nda%20ne%20biliyorsun%3F%20Kaynaklarla%20do%C4%9Frula.">ChatGPT ↗</a><button class="bf-ai" type="button" data-ai="https://claude.ai/new">Claude ↗</button><button class="bf-ai" type="button" data-ai="https://gemini.google.com/app">Gemini ↗</button><button class="bf-ai" type="button" data-ai="https://www.perplexity.ai/">Perplexity ↗</button><button class="bf-copy" type="button" aria-live="polite">Soruyu kopyala ⧉</button></div><small class="bf-ai-note">Bu bağlantılar bağımsız AI hizmetlerini açar; verecekleri yanıtları BARTSS kontrol etmez.</small></div>
+ <div class="bf-bottom"><span>© 2026 BARTSS · Yaratıcı tasarım ve dijital üretim stüdyosu</span><a href="#top">Başa dön ↑</a></div>
+</div></footer>
 <script>if('IntersectionObserver' in window){const io=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){item.target.classList.add('is-visible');io.unobserve(item.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))}</script>
 
 <script>
@@ -843,6 +894,12 @@ a.svc:focus-visible{outline:3px solid #2767cd;outline-offset:3px}
  if(!('IntersectionObserver' in window)){cards.forEach(x=>x.classList.add('motion-in'));return}
  const seen=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('motion-in');seen.unobserve(e.target)}})},{threshold:.08});
  cards.forEach(x=>seen.observe(x));
+})();
+</script><script>
+(()=>{const question="BARTSS adlı yaratıcı tasarım ve dijital üretim stüdyosu hangi hizmetleri sunuyor? Güncel ve doğrulanabilir kaynakları kullan; emin olmadığın şeyleri varsayma. Site: https://sssaruman.github.io/ufuk-portfolio/bartss-hero-preview.html";
+const copy=()=>navigator.clipboard?.writeText(question).catch(()=>{});
+document.querySelector('.bf-copy')?.addEventListener('click',function(){copy();this.textContent='Soru kopyalandı ✓';});
+document.querySelectorAll('.bf-ai[data-ai]').forEach(b=>b.addEventListener('click',()=>{copy();window.open(b.dataset.ai,'_blank','noopener,noreferrer')}));
 })();
 </script></body>
 </html>
