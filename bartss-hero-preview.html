@@ -226,13 +226,83 @@ body{overflow-x:hidden}
 }
 
 /* Blink overlay bound to the original character sprite */
-.characters-wrap{position:absolute;left:36.3%;top:42.8%;width:30.4%;transform-origin:50% 88%;animation:charBob 4.6s ease-in-out infinite}
+.characters-wrap{position:absolute;left:36.3%;top:calc(42.8% - 4px);width:30.4%;transform-origin:50% 88%;animation:charBob 4.6s ease-in-out infinite}
 .characters-wrap .characters{position:relative;left:auto;top:auto;width:100%;height:auto;display:block;animation:none}
 .blink{position:absolute;width:2.3%;height:2.2%;border-radius:50%;background:#031638;opacity:0;transform:scaleY(.1);animation:blink 7.8s steps(1,end) infinite;pointer-events:none}
 .blink.e1{left:33.75%;top:9.1%}.blink.e2{left:37.9%;top:7.2%;width:2.6%;height:3%}
 .blink.e3{left:73.05%;top:40.1%}.blink.e4{left:77.8%;top:44%;width:2.5%;height:3%}
 @keyframes blink{0%,43%,46%,100%{opacity:0}44%,45%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.characters-wrap,.blink{animation:none!important}}
+
+/* BARTSS page continuation — does not alter hero art direction */
+html{scroll-behavior:smooth}
+.nav-links a{color:inherit;text-decoration:none}
+.cta{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.nav-links a:hover,.footer-links a:hover{opacity:.55}
+.site-main{background:#fafaf8;color:#0c2243}
+.contain{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+.section{padding:112px 0}
+.eyebrow{font-size:12px;text-transform:uppercase;font-weight:850;letter-spacing:.13em;color:#256adb}
+.display{font-size:clamp(39px,4.5vw,70px);line-height:1.035;letter-spacing:-.06em;margin:17px 0 18px;font-weight:850}
+.lead{font-size:clamp(16px,1.35vw,20px);line-height:1.55;color:#5a6472;max-width:660px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-head .display{max-width:760px}
+.inline-link{color:#0c2243;font-size:14px;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:6px;white-space:nowrap}
+.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.svc{background:#fff;border:1px solid #e3e6ea;border-radius:21px;padding:10px 10px 22px;min-width:0;transition:transform .35s ease,border-color .35s ease}
+.svc:hover{transform:translateY(-7px);border-color:#5284f8}
+.svc-art{height:198px;border-radius:15px;position:relative;overflow:hidden;display:grid;place-items:center}
+.svc:nth-child(1) .svc-art{background:#d8e9ff}.svc:nth-child(2) .svc-art{background:#ffe8c9}.svc:nth-child(3) .svc-art{background:#dcefdc}.svc:nth-child(4) .svc-art{background:#e6dfff}
+.svc-icon{font-size:83px;line-height:1;filter:drop-shadow(8px 10px 0 rgba(8,35,78,.10));transform:rotate(-10deg)}
+.svc:nth-child(2) .svc-icon{transform:rotate(7deg)}.svc:nth-child(3) .svc-icon{transform:rotate(-5deg)}
+.svc h3{font-size:22px;letter-spacing:-.045em;margin:20px 10px 7px}
+.svc p{font-size:14px;line-height:1.5;color:#707782;margin:0 10px}
+.svc .num{position:absolute;top:15px;left:15px;font-size:12px;font-weight:900;color:#0d356a}
+.case-section{background:#f0f4fb}
+.case-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:18px}
+.case{position:relative;display:flex;flex-direction:column;min-height:392px;border-radius:22px;overflow:hidden;background:#102b59;text-decoration:none;color:white}
+.case-image{width:100%;height:300px;object-fit:cover;transition:transform .5s ease}
+.case:hover .case-image{transform:scale(1.045)}
+.case-info{padding:22px 25px 26px;background:#0b234a;flex:1}
+.case-info small{font-size:12px;color:#95b9ea}.case-info h3{font-size:26px;letter-spacing:-.045em;margin:7px 0 0}
+.case.featured{grid-row:span 1}
+.case:nth-child(2) .case-info{background:#133c81}
+.case:nth-child(3) .case-info{background:#184c7e}
+.case .arrow{position:absolute;top:16px;right:18px;background:white;color:#0c2243;width:35px;height:35px;display:grid;place-items:center;border-radius:50%;font-size:21px}
+.intro{background:#0c2243;color:#fff;overflow:hidden}
+.intro .lead{color:#b7c9e3}
+.intro-layout{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.intro-panel{border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:30px;background:#153a73;position:relative;min-height:390px}
+.intro-panel .mini{font-size:11px;letter-spacing:.15em;color:#a9c8ff;text-transform:uppercase}
+.intro-panel .flow-row{display:flex;justify-content:space-between;gap:9px;margin-top:42px}
+.flow-node{flex:1;border:1px solid rgba(255,255,255,.28);background:#1d4a8d;border-radius:14px;padding:19px 9px;text-align:center;font-size:13px;font-weight:750}
+.flow-link{color:#94c1ff;align-self:center}
+.intro-panel .flow-result{margin-top:22px;background:#f6fafc;border-radius:14px;padding:22px;color:#0c2243;font-weight:800}
+.intro-panel .flow-result small{display:block;color:#4b6588;font-size:12px;font-weight:500;margin-top:5px}
+.process-list{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:p}
+.process-step{border-top:2px solid #0c2243;padding-top:18px}
+.process-step strong{font-size:12px;color:#4283f6}.process-step h3{font-size:21px;margin:20px 0 12px;letter-spacing:-.04em}
+.process-step p{color:#69717a;font-size:14px;line-height:1.5}
+.about-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.about-card{background:#ffca9e;border-radius:26px;min-height:360px;padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.about-card .monogram{font-weight:950;letter-spacing:-.095em;font-size:clamp(70px,10vw,145px);line-height:.8;color:#102d58}
+.about-card p{max-width:300px;font-size:16px;line-height:1.5;color:#17345c;font-weight:750}
+.about-copy p{font-size:20px;line-height:1.6;color:#525e6e}
+.contact{background:#408cf3;color:#fff;overflow:hidden}
+.contact .display{font-size:clamp(55px,7.8vw,118px);max-width:950px}
+.contact .eyebrow{color:#e7f1ff}
+.contact .contact-btn{display:inline-flex;margin-top:18px;padding:20px 33px;background:#fff;color:#082b5b;border-radius:999px;font-size:18px;font-weight:850;text-decoration:none}
+.footer{background:#071c3a;color:white;padding:55px 0}
+.footer-layout{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.footer-logo{font-size:30px;font-weight:950;letter-spacing:.08em}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{color:#cee1f8;text-decoration:none;font-size:13px}
+.footer small{color:#859cbb}
+.reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.reveal:not(.is-visible){opacity:.01;transform:translateY(25px)}.reveal{transition:opacity .65s ease,transform .65s ease}}
+@media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,1fr)}.case-grid{grid-template-columns:1fr 1fr}.case.featured{grid-column:1/-1}.intro-layout{gap:32px}.process-list{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.contain{width:calc(100% - 36px)}.section{padding:72px 0}.section-head{display:block}.service-grid,.case-grid,.intro-layout,.about-layout{grid-template-columns:1fr}.case.featured{grid-column:auto}.svc-art{height:180px}.process-list{grid-template-columns:1fr 1fr}.intro-panel{min-height:310px;padding:20px}.flow-node{padding:12px 3px;font-size:10px}.about-layout{gap:24px}.footer-layout{align-items:start;flex-direction:column}.contact .display{font-size:56px}}
+
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -247,12 +317,12 @@ body{overflow-x:hidden}
   <header class="nav">
     <div class="brand">BARTSS</div>
     <nav class="nav-links">
-      <span>Hizmetler</span><span>Projeler</span><span>Fiyatlar</span>
-      <span>Blog</span><span>Kurumsal</span><span>İletişim</span>
+      <a href="#hizmetler">Hizmetler</a><a href="#projeler">Projeler</a><a href="#surec">Süreç</a>
+      <a href="#yapay-zeka">AI Sistemler</a><a href="#hakkimda">Hakkımda</a><a href="#iletisim">İletişim</a>
     </nav>
     <div class="nav-actions">
       <a class="pill" href="#">Panel</a>
-      <a class="pill dark" href="#"><span class="dot"></span>Toplantı planla</a>
+      <a class="pill dark" href="#iletisim"><span class="dot"></span>Toplantı planla</a>
     </div>
   </header>
 
@@ -260,7 +330,7 @@ body{overflow-x:hidden}
     <h1>Markanı görünür değil,<br>unutulmaz yapıyoruz.</h1>
     <p>Sosyal medya, yapay zeka reklam filmi, web ve marka kimliğini araştırmayla başlatan, stratejiyle kuran ve planla yürüten marka laboratuvarı.</p>
     <div class="ctas">
-      <button class="cta" type="button">Çalışmaları gör</button>
+      <a class="cta" href="#projeler">Çalışmaları gör</a>
       <div class="social-proof">
         <span class="avatars">
           <span class="avatar a1">UK</span>
@@ -291,8 +361,60 @@ body{overflow-x:hidden}
           <span>AutoLAB</span><span>AGENS</span><span>COMCE</span>
         </div>
       </div>
-      <a class="all-brands" href="#">Tüm markaları gör ↗</a>
+      <a class="all-brands" href="#projeler">Çalışmaları keşfet ↗</a>
     </div>
   </div>
+
+<main class="site-main">
+<section class="section" id="hizmetler">
+  <div class="contain">
+    <div class="section-head reveal"><div><span class="eyebrow">01 / Neler yapıyorum?</span><h2 class="display">Bir fikri alıp<br>çalışan bir şeye dönüştürüyorum.</h2><p class="lead">Görsel kimlikten dijital deneyime, hareketli içerikten otomasyona kadar farklı disiplinleri tek bir yaratıcı süreçte birleştiriyorum.</p></div><a class="inline-link" href="#iletisim">Birlikte çalışalım ↗</a></div>
+    <div class="service-grid">
+      <article class="svc reveal"><div class="svc-art"><span class="num">01 / BRAND</span><span class="svc-icon" aria-hidden="true">✳</span></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">02 / DIGITAL</span><span class="svc-icon" aria-hidden="true">▣</span></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">03 / MOTION</span><span class="svc-icon" aria-hidden="true">◉</span></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">04 / SYSTEM</span><span class="svc-icon" aria-hidden="true">⌘</span></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section case-section" id="projeler">
+  <div class="contain">
+    <div class="section-head reveal"><div><span class="eyebrow">02 / Seçili çalışmalar</span><h2 class="display">Farklı alanlar.<br>Tek bir üretim yaklaşımı.</h2><p class="lead">Görsel tasarım, oyun arayüzleri ve dijital ürünler üzerinden seçili çalışmalar.</p></div><a class="inline-link" href="#iletisim">Yeni bir proje konuşalım ↗</a></div>
+    <div class="case-grid">
+      <a class="case featured reveal" href="brover-studio.html"><img class="case-image" loading="lazy" src="art/brover-hero.svg" alt="Brover Studio projesi görseli"><span class="arrow">↗</span><div class="case-info"><small>Dijital tasarım / Kreatif yön</small><h3>Brover Studio</h3></div></a>
+      <a class="case reveal" href="crown-kin.html"><img class="case-image" loading="lazy" src="art/thronex-editorial.svg" alt="Thronex oyun arayüzü görseli"><span class="arrow">↗</span><div class="case-info"><small>Oyun / UI / Art direction</small><h3>Thronex</h3></div></a>
+      <a class="case reveal" href="case.html"><img class="case-image" loading="lazy" src="art/word-okey-editorial.svg" alt="Word Okey oyun tasarımı görseli"><span class="arrow">↗</span><div class="case-info"><small>Oyun / Dijital deneyim</small><h3>Word Okey</h3></div></a>
+    </div>
+  </div>
+</section>
+<section class="section intro" id="yapay-zeka">
+  <div class="contain intro-layout">
+    <div class="reveal"><span class="eyebrow" style="color:#98baff">03 / AI & Yaratıcı sistemler</span><h2 class="display">Sadece tasarlamıyorum.<br>Üretim sistemleri kuruyorum.</h2><p class="lead">Brief’ten tasarıma, içerik üretiminden onay ve yayın akışına kadar insan yaratıcılığı ile otomasyonu birlikte çalıştıran süreçler tasarlıyorum.</p><a class="inline-link" href="#surec" style="color:white">Nasıl çalışıyorum? ↗</a></div>
+    <div class="intro-panel reveal"><span class="mini">Yaratıcı üretim akışı / Örnek yapı</span><div class="flow-row"><div class="flow-node">Brief</div><span class="flow-link">→</span><div class="flow-node">Strateji</div><span class="flow-link">→</span><div class="flow-node">Üretim</div></div><div class="flow-row" style="margin-top:16px"><div class="flow-node">Kontrol</div><span class="flow-link">→</span><div class="flow-node">Onay</div><span class="flow-link">→</span><div class="flow-node">Teslim</div></div><div class="flow-result">Daha kontrollü, daha tutarlı üretim<small>Otomasyon, insan onayının yerini değil; gereksiz tekrarları alır.</small></div></div>
+  </div>
+</section>
+<section class="section" id="surec">
+  <div class="contain"><div class="section-head reveal"><div><span class="eyebrow">04 / Çalışma biçimim</span><h2 class="display">Önce anlarım.<br>Sonra tasarlar, test ederim.</h2></div></div>
+    <div class="process-list">
+      <div class="process-step reveal"><strong>01 / KEŞİF</strong><h3>Dinlerim</h3><p>Problemi, hedefi ve gerçek ihtiyacı netleştiririm.</p></div>
+      <div class="process-step reveal"><strong>02 / ARAŞTIRMA</strong><h3>İncelerim</h3><p>Kullanıcıyı, rakipleri ve iyi örnekleri araştırırım.</p></div>
+      <div class="process-step reveal"><strong>03 / KURGU</strong><h3>Çözerim</h3><p>İçerik, deneyim ve görsel sistemi kurarım.</p></div>
+      <div class="process-step reveal"><strong>04 / ÜRETİM</strong><h3>Üretirim</h3><p>Tasarımı ve gerekli etkileşimleri hayata geçiririm.</p></div>
+      <div class="process-step reveal"><strong>05 / İYİLEŞTİRME</strong><h3>Geliştiririm</h3><p>Test ve geri bildirimlerle sonucu olgunlaştırırım.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="hakkimda" style="background:#f1f3f5">
+  <div class="contain about-layout">
+    <div class="about-card reveal"><span class="monogram">B.</span><p>Tasarım, teknoloji ve deney yapmayı bir arada seven bağımsız yaratıcı üretici.</p></div>
+    <div class="about-copy reveal"><span class="eyebrow">05 / Hakkımda</span><h2 class="display">Tek bir disipline<br>sığmıyorum.</h2><p>Çizmek ve tasarlamakla başlayan yolculuğum; grafik tasarım, web, kullanıcı arayüzleri, marka kimliği, oyun ve 3D üretime uzandı. Bir alanda öğrendiğimi diğerine taşıyarak kendi üretim biçimimi geliştirdim.</p><p>Bugün yapay zekâ destekli iş akışları, otomasyon ve yeni dijital ürün fikirleri üzerine de çalışıyorum.</p></div>
+  </div>
+</section>
+<section class="section contact" id="iletisim">
+  <div class="contain reveal"><span class="eyebrow">06 / Birlikte çalışalım</span><h2 class="display">Aklında bir fikir<br>mi var?</h2><p style="max-width:580px;font-size:19px;line-height:1.55">Markanı, ürününü veya dijital deneyimini konuşalım. Nereden başlayacağımızı birlikte netleştirebiliriz.</p><a class="contact-btn" href="mailto:hello@bartss.com?subject=Yeni%20bir%20proje">Projeni anlat ↗</a></div>
+</section>
+</main>
+<footer class="footer"><div class="contain footer-layout"><div><div class="footer-logo">BARTSS</div><small>Bağımsız yaratıcı tasarım ve dijital üretim.</small></div><nav class="footer-links"><a href="#hizmetler">Hizmetler</a><a href="#projeler">Çalışmalar</a><a href="#yapay-zeka">AI sistemler</a><a href="#surec">Süreç</a><a href="#hakkimda">Hakkımda</a><a href="#iletisim">İletişim</a></nav><small>© 2026 BARTSS</small></div></footer>
+<script>if('IntersectionObserver' in window){const io=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){item.target.classList.add('is-visible');io.unobserve(item.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))}</script>
 </body>
 </html>
