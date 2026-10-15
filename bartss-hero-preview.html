@@ -192,11 +192,48 @@ body{overflow-x:hidden}
   .hand,.enter,.impact,.characters{animation:none!important}
   .impact{opacity:0}
 }
+
+/* Layout repair: keep the original sections and scene, change only alignment */
+.hero{height:100svh;min-height:640px;overflow:hidden}
+.nav{width:min(1160px,calc(100% - 64px));grid-template-columns:auto minmax(0,1fr) auto;gap:32px;top:23px}
+.nav-links{gap:clamp(18px,1.4vw,27px);font-size:15px}
+.nav-actions{gap:9px}
+.copy{top:clamp(112px,14vh,148px)}
+.scene{bottom:-2px;width:min(1240px,76vw)}
+.char-window{clip-path:polygon(0 0,100% 0,100% 67.7%,0 67.7%)}
+.characters{left:36.3%;top:42.8%;width:30.4%}
+.hand{left:31.5%;top:52.0%;width:24.6%}
+.enter{left:41.2%;top:72.8%;width:20.2%}
+.impact{left:39.1%;top:68.1%}
+.brand-strip{position:relative;height:88px;bottom:auto;z-index:2}
+.scene img{backface-visibility:hidden}
+@media(max-width:1100px) and (min-width:761px){
+ .nav{width:calc(100% - 48px);gap:16px;grid-template-columns:auto 1fr auto}
+ .nav-links{gap:12px;font-size:12px}
+ .copy{top:122px}
+ .scene{bottom:0;width:min(1040px,91vw)}
+}
+@media(max-width:760px){
+ .hero{height:100svh;min-height:610px}
+ .nav{width:calc(100% - 28px);top:16px;grid-template-columns:auto auto;justify-content:space-between}
+ .nav-links{display:none}
+ .nav-actions{gap:6px}
+ .pill{min-height:38px;padding:0 10px}
+ .copy{top:100px}
+ .copy h1{font-size:clamp(33px,8.5vw,46px)}
+ .scene{width:980px;bottom:0}
+ .brand-strip{height:auto;min-height:78px}
+}
 </style>
+<link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
+<link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
+<link rel="preload" as="image" href="https://at.adobe.com/iJqL5Uah0PteO7uu">
+<link rel="preload" as="image" href="https://at.adobe.com/E6d2fAYFU4nqceqA">
+<link rel="preload" as="image" href="https://at.adobe.com/yoAtSnjeGAwuVKMg">
 </head>
 <body>
 <section class="hero">
-  <img class="hero-bg" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
+  <img class="hero-bg" fetchpriority="high" decoding="async" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
 
   <header class="nav">
     <div class="brand">BARTSS</div>
@@ -235,7 +272,8 @@ body{overflow-x:hidden}
     <img class="impact" src="https://at.adobe.com/iwBV2iUguD5o9W0Q" alt="">
   </div>
 
-  <div class="brand-strip">
+</section>
+<div class="brand-strip">
     <div class="brand-strip-inner">
       <div>
         <small>Birlikte çalıştığımız markalar</small>
@@ -247,6 +285,5 @@ body{overflow-x:hidden}
       <a class="all-brands" href="#">Tüm markaları gör ↗</a>
     </div>
   </div>
-</section>
 </body>
 </html>
