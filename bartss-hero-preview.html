@@ -429,6 +429,13 @@ html.is-loading,html.is-loading body{overflow:hidden}
 
 /* Enter key: return inside blue keyboard cradle, clear of white foreground */
 .enter{top:72.4%;left:40.35%;width:21.9%}
+
+/* Transparent isolated art assets — preserve text and layout */
+.service-art-crop{overflow:visible}
+.service-art-crop img.service-cutout{width:128%;height:128%;max-width:none;object-fit:contain;left:-13%;top:-16%}
+.svc-art{isolation:isolate}
+.svc-illustration{display:block;max-width:none;width:92%;height:110%;object-fit:contain;position:absolute;left:4%;top:-5%;filter:drop-shadow(0 8px 14px rgba(8,35,78,.04))}
+@media(max-width:680px){.service-art-crop img.service-cutout{width:120%;height:120%;left:-10%;top:-12%}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -502,15 +509,15 @@ html.is-loading,html.is-loading body{overflow:hidden}
     <p class="lead">Görsel kimlikten dijital deneyime, hareketli içerikten otomasyona kadar farklı disiplinleri tek bir yaratıcı süreçte birleştiriyorum.</p>
   </div>
   <div class="service-illustration">
-    <div class="service-art-crop"><img src="./assets/bartss-service-characters.jpg" loading="lazy" decoding="async" alt="BARTSS karakterleri: masa başında bir fikri birlikte geliştiren iki lacivert figür ve turuncu saksılı yeşil bitki"></div>
+    <div class="service-art-crop"><img class="service-cutout" src="https://at.adobe.com/Fq9inmJgD44tftNx" loading="lazy" decoding="async" alt="BARTSS karakterleri: masa başında bir fikri birlikte geliştiren iki lacivert figür ve turuncu saksılı yeşil bitki"></div>
     <a class="inline-link service-art-link" href="#iletisim">Birlikte çalışalım ↗</a>
   </div>
 </div>
     <div class="service-grid">
-      <article class="svc reveal"><div class="svc-art"><span class="num">01 / BRAND</span><span class="svc-icon" aria-hidden="true">✳</span></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">02 / DIGITAL</span><span class="svc-icon" aria-hidden="true">▣</span></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">03 / MOTION</span><span class="svc-icon" aria-hidden="true">◉</span></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></article>
-      <article class="svc reveal"><div class="svc-art"><span class="num">04 / SYSTEM</span><span class="svc-icon" aria-hidden="true">⌘</span></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">01 / BRAND</span><img class="svc-illustration" src="https://at.adobe.com/H26bhpCLgyK2zwMG" loading="lazy" decoding="async" alt=""></div><h3>Marka & Görsel Kimlik ↗</h3><p>Logo, görsel dil, ambalaj, kampanya ve tutarlı marka sistemi.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">02 / DIGITAL</span><img class="svc-illustration" src="https://at.adobe.com/gR83RhZh3PcCL4tR" loading="lazy" decoding="async" alt=""></div><h3>Web & UI/UX ↗</h3><p>Karakter sahibi, işlevsel ve etkileşimli web deneyimleri.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">03 / MOTION</span><img class="svc-illustration" src="https://at.adobe.com/TiHhsL8iGi9ob6JP" loading="lazy" decoding="async" alt=""></div><h3>3D & Motion ↗</h3><p>Ürün görselleştirme, animasyon, reklam sahneleri ve oyun görselleri.</p></article>
+      <article class="svc reveal"><div class="svc-art"><span class="num">04 / SYSTEM</span><img class="svc-illustration" src="https://at.adobe.com/47khEghls2C8s9Fd" loading="lazy" decoding="async" alt=""></div><h3>AI & Otomasyon ↗</h3><p>Tekrarlayan işleri hızlandıran yaratıcı üretim akışları ve araçlar.</p></article>
     </div>
   </div>
 </section>
