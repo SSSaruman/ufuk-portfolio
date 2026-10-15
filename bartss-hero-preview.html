@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html class="is-loading" lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -362,6 +362,21 @@ html,body{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:400}
 .brand-marquee:hover .brand-track{animation-play-state:paused}
 @keyframes brandsSlide{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.brand-track{animation:none}}
+
+/* Initial scene loader: hides late-loading remote artwork */
+html.is-loading,html.is-loading body{overflow:hidden}
+.site-loader{position:fixed;inset:0;z-index:1000;background:#e8f1fb;color:#0c2243;display:grid;place-items:center;opacity:1;visibility:visible;transition:opacity .65s ease,visibility .65s ease}
+.site-loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{display:flex;flex-direction:column;align-items:center;gap:19px;text-align:center}
+.loader-logo{font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:.065em;line-height:1}
+.loader-key{position:relative;width:82px;height:58px;border:3px solid #0c2243;border-radius:15px;background:#5299ff;box-shadow:0 9px 0 #0c2243;transform-origin:bottom;animation:loaderKey 1.25s ease-in-out infinite}
+.loader-key:before{content:'↵';position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:36px;line-height:1;font-weight:700}
+.loader-caption{font-size:12px;letter-spacing:.12em;font-weight:650}
+.loader-progress{width:160px;height:3px;background:#c8d8ec;overflow:hidden;border-radius:20px}
+.loader-progress:after{content:'';display:block;width:40%;height:100%;border-radius:20px;background:#0c2243;animation:loadBar 1.25s ease-in-out infinite}
+@keyframes loaderKey{0%,70%,100%{transform:translateY(0);box-shadow:0 9px 0 #0c2243}35%{transform:translateY(7px);box-shadow:0 2px 0 #0c2243}}
+@keyframes loadBar{0%{transform:translateX(-110%)}100%{transform:translateX(360%)}}
+@media(prefers-reduced-motion:reduce){.loader-key,.loader-progress:after{animation:none}}
 </style>
 <link rel="preconnect" href="https://at.adobe.com" crossorigin><link rel="preconnect" href="https://photoshop-api.adobe.io" crossorigin>
 <link rel="preload" as="image" href="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141">
@@ -370,6 +385,9 @@ html,body{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:400}
 <link rel="preload" as="image" href="https://at.adobe.com/yoAtSnjeGAwuVKMg">
 </head>
 <body>
+<div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="BARTSS sitesi yükleniyor">
+ <div class="loader-inner"><div class="loader-logo">BARTSS</div><div class="loader-key" aria-hidden="true"></div><div class="loader-caption">SAHNE HAZIRLANIYOR</div><div class="loader-progress" aria-hidden="true"></div></div>
+</div>
 <section class="hero">
   <img class="hero-bg" fetchpriority="high" decoding="async" src="https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:1fffc85c-7dce-448a-9bad-a3a418c25141" alt="">
 
@@ -472,5 +490,45 @@ html,body{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:400}
 </main>
 <footer class="footer"><div class="contain footer-layout"><div><div class="footer-logo">BARTSS</div><small>Bağımsız yaratıcı tasarım ve dijital üretim.</small></div><nav class="footer-links"><a href="#hizmetler">Hizmetler</a><a href="#projeler">Çalışmalar</a><a href="#yapay-zeka">AI sistemler</a><a href="#surec">Süreç</a><a href="#hakkimda">Hakkımda</a><a href="#iletisim">İletişim</a></nav><small>© 2026 BARTSS</small></div></footer>
 <script>if('IntersectionObserver' in window){const io=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){item.target.classList.add('is-visible');io.unobserve(item.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))}</script>
+
+<script>
+(function(){
+ const loader=document.getElementById('siteLoader');
+ const started=performance.now();
+ const minTime=1050, maxTime=10000;
+ let finished=false;
+ const sources=[
+   document.querySelector('.hero-bg'),
+   document.querySelector('.characters'),
+   document.querySelector('.hand'),
+   document.querySelector('.enter'),
+   document.querySelector('.impact')
+ ].filter(Boolean);
+ function settleImage(im){
+   if(im.complete) return Promise.resolve();
+   return new Promise(resolve=>{
+     im.addEventListener('load',resolve,{once:true});
+     im.addEventListener('error',resolve,{once:true});
+   });
+ }
+ function reveal(){
+   if(finished)return;finished=true;
+   const remaining=Math.max(0,minTime-(performance.now()-started));
+   setTimeout(()=>{
+     document.documentElement.classList.remove('is-loading');
+     loader.classList.add('is-done');
+     loader.setAttribute('aria-hidden','true');
+   },remaining);
+ }
+ Promise.race([
+  Promise.all(sources.map(settleImage)).then(()=>Promise.all(sources.map(im=>{
+   if(im.complete && im.naturalWidth>0 && im.decode) return im.decode().catch(()=>{});
+   return Promise.resolve();
+  }))),
+  new Promise(resolve=>setTimeout(resolve,maxTime))
+ ]).then(reveal,reveal);
+ window.addEventListener('pageshow',e=>{if(e.persisted)reveal()});
+})();
+</script>
 </body>
 </html>
